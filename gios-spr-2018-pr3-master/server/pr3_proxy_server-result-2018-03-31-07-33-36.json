@@ -1,0 +1,109 @@
+{
+    "tests": [
+        {
+            "output": {
+                "proxy_returncode": null,
+                "server_returncode": 0,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "Proxy Server Initialized\nSpinning Up Worker Threads\nUsing curl\nUsing Data Directory: localhost:8047\nPath: /not-there1\nSize: -1\nSending header first\n_close: seems that entire file was not sent.  Filling with zeros.\n"
+            },
+            "traceback": "Traceback (most recent call last):\n  File \"/home/vmuser_iruazhbg/gios.py\", line 249, in func_wrapper\n    ans = func(self)\n  File \"run.py\", line 317, in test_nonexistent_files\n    self.go(num_client_threads, num_proxy_threads, delay, num_requests, workload_file, answer_log)\n  File \"run.py\", line 222, in go\n    self.assertIsNotNone(self.p_client.poll(), \"The client has not exited within the timeout ({} seconds) and is probably hung.\".format(self.client_timeout))\nAssertionError: The client has not exited within the timeout (20 seconds) and is probably hung.\n",
+            "description": "Tests that the server properly handles requests for non-existent files"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "server_returncode": 0,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": 0,
+                "proxy_console": "Proxy Server Initialized\nSpinning Up Worker Threads\nUsing curl\nUsing Data Directory: localhost:8466\nPath: /10mb-sample-file-1.txt\nSize: 10485760\nSending header first\n20971520 bytes received\n_gf_send: Connection reset by peer\ngfs_send failed\n18446744073709551615 bytes sent\n_gf_send: Broken pipe\n"
+            },
+            "traceback": "Traceback (most recent call last):\n  File \"/home/vmuser_iruazhbg/gios.py\", line 249, in func_wrapper\n    ans = func(self)\n  File \"run.py\", line 304, in test_ok_with_long_message\n    self.go(num_client_threads, num_proxy_threads, delay, num_requests, workload_file, answer_log)\n  File \"run.py\", line 266, in go\n    self.assertFalse(incorrect_contents, \"Incorrect content detected in files: {}\".format(incorrect_contents_list))\nAssertionError: Incorrect content detected in files: [' /10mb-sample-file-0.mpg']\n",
+            "description": "Tests that the server properly sends an OK response and a long message."
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "server_returncode": 0,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": 0,
+                "proxy_console": "Proxy Server Initialized\nSpinning Up Worker Threads\nUsing curl\nUsing Data Directory: localhost:8323\nPath: /1kb-sample-file-1.html\nSize: 1034\nSending header first\n2068 bytes received\n2068 bytes sent\nUsing curl\nUsing Data Directory: localhost:8323\nPath: /1kb-sample-file-2.png\nSize: 1073\nSending header first\n2146 bytes received\n2146 bytes sent\nUsing curl\nUsing Data Directory: localhost:8323\nPath: /1kb-sample-file-3.jpg\nSize: 1295\nSending header first\n2590 bytes received\n2590 bytes sent\nUsing curl\nUsing Data Directory: localhost:8323\nPath: /1kb-sample-file-4.png\nSize: 1273\nSending header first\n2546 bytes received\n2546 bytes sent\nUsing curl\nUsing Data Directory: localhost:8323\nPath: /1kb-sample-file-0.png\nSize: 1270\nSending header first\n2540 bytes received\n2540 bytes sent\nUsing curl\nUsing Data Directory: localhost:8323\nPath: /1kb-sample-file-1.html\nSize: 1034\nSending header first\n2068 bytes received\n2068 bytes sent\n"
+            },
+            "traceback": "Traceback (most recent call last):\n  File \"/home/vmuser_iruazhbg/gios.py\", line 249, in func_wrapper\n    ans = func(self)\n  File \"run.py\", line 291, in test_ok_with_short_message\n    self.go(num_client_threads, num_proxy_threads, delay, num_requests, workload_file, answer_log)\n  File \"run.py\", line 266, in go\n    self.assertFalse(incorrect_contents, \"Incorrect content detected in files: {}\".format(incorrect_contents_list))\nAssertionError: Incorrect content detected in files: [' /1kb-sample-file-0.png', ' /1kb-sample-file-1.html', ' /1kb-sample-file-1.html', ' /1kb-sample-file-2.png', ' /1kb-sample-file-3.jpg', ' /1kb-sample-file-4.png']\n",
+            "description": "Tests that the server properly sends an OK response and a short message."
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "server_returncode": 0,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "Log Tail:\n04462 bytes sent\n_close:: Connection reset by peer\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /1kb-sample-file-4.png\nSize: 1295\nSending header first\nSize: 1273\nSending header first\n466348 bytes received\n466348 bytes sent\n_close:: Connection reset by peer\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /notthere.png\n2590 bytes received\n2590 bytes sent\n2546 bytes received\n2546 bytes sent\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /paraglider.jpg\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /road.jpg\nSize: -1\nSending header first\n_close: seems that entire file was not sent.  Filling with zeros.\nSize: 138177\nSending header first\nSize: 452231\nSending header first\n276354 bytes received\n276354 bytes sent\n_close:: Connection reset by peer\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /yellowstone.jpg\nSize: 233174\nSending header first\n904462 bytes received\n904462 bytes sent\n_close:: Connection reset by peer\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /moranabovejacksonlake.jpg\nSize: 104244\nSending header first\n208488 bytes received\n208488 bytes sent\n_close:: Connection reset by peer\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /1kb-sample-file-0.png\nSize: 1270\nSending header first\n2540 bytes received\n2540 bytes sent\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /1kb-sample-file-1.html\n466348 bytes received\n466348 bytes sent\n_close:: Connection reset by peer\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /1kb-sample-file-2.png\nSize: 1034\nSending header first\nSize: 1073\nSending header first\n2068 bytes received\n2068 bytes sent\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /1kb-sample-file-3.jpg\n2146 bytes received\n2146 bytes sent\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /1kb-sample-file-4.png\nSize: 1295\nSending header first\n2590 bytes received\n2590 bytes sent\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /notthere.png\nSize: 1273\nSending header first\n2546 bytes received\n2546 bytes sent\nSize: -1\nSending header first\n_close: seems that entire file was not sent.  Filling with zeros.\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /paraglider.jpg\n904462 bytes received\n904462 bytes sent\n_close:: Connection reset by peer\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /road.jpg\nSize: 452231\nSending header first\nSize: 138177\nSending header first\nSize: 233174\nSending header first\n276354 bytes received\n276354 bytes sent\n_close:: Connection reset by peer\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /yellowstone.jpg\nSize: 104244\nSending header first\n466348 bytes received\n466348 bytes sent\n_close:: Connection reset by peer\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /moranabovejacksonlake.jpg\n208488 bytes received\n208488 bytes sent\n_close:: Connection reset by peer\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /1kb-sample-file-0.png\nSize: 1270\nSending header first\n2540 bytes received\n2540 bytes sent\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /1kb-sample-file-1.html\n904462 bytes received\n904462 bytes sent\n_close:: Connection reset by peer\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /1kb-sample-file-2.png\nSize: 1034\nSending header first\n2068 bytes received\n2068 bytes sent\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /1kb-sample-file-3.jpg\nSize: 1073\nSending header first\n2146 bytes received\n2146 bytes sent\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /1kb-sample-file-4.png\nSize: 1295\nSending header first\nSize: 1273\nSending header first\n2590 bytes received\n2590 bytes sent\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /notthere.png\n2546 bytes received\n2546 bytes sent\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /paraglider.jpg\nSize: -1\nSending header first\n_close: seems that entire file was not sent.  Filling with zeros.\nSize: 233174\nSending header first\nSize: 452231\nSending header first\n466348 bytes received\n466348 bytes sent\n_close:: Connection reset by peer\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /road.jpg\nSize: 138177\nSending header first\n276354 bytes received\n276354 bytes sent\n_close:: Connection reset by peer\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /yellowstone.jpg\n904462 bytes received\n904462 bytes sent\n_close:: Connection reset by peer\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /moranabovejacksonlake.jpg\nSize: 104244\nSending header first\n208488 bytes received\n208488 bytes sent\n_close:: Connection reset by peer\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /1kb-sample-file-0.png\nSize: 1270\nSending header first\n2540 bytes received\n2540 bytes sent\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /1kb-sample-file-1.html\nSize: 1034\nSending header first\n2068 bytes received\n2068 bytes sent\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /1kb-sample-file-2.png\nSize: 1073\nSending header first\n2146 bytes received\n2146 bytes sent\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /1kb-sample-file-3.jpg\nSize: 1295\nSending header first\n2590 bytes received\n2590 bytes sent\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /1kb-sample-file-4.png\nSize: 1273\nSending header first\n2546 bytes received\n2546 bytes sent\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /notthere.png\nSize: -1\nSending header first\n_close: seems that entire file was not sent.  Filling with zeros.\nSize: 452231\nSending header first\n904462 bytes received\n904462 bytes sent\n_close:: Connection reset by peer\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /paraglider.jpg\nSize: 233174\nSending header first\n466348 bytes received\n466348 bytes sent\n_close:: Connection reset by peer\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /road.jpg\nSize: 138177\nSending header first\n276354 bytes received\n276354 bytes sent\n_close:: Connection reset by peer\nUsing curl\nUsing Data Directory: localhost:8081\nPath: /yellowstone.jpg\nSize: 104244\nSending header first\n=================================================================\n==120==ERROR: AddressSanitizer: heap-use-after-free on address 0x61b00001f658 at pc 0x000000403446 bp 0x7f00614f8d60 sp 0x7f00614f8d50\nREAD of size 8 at 0x61b00001f658 thread T7\n    #0 0x403445 in _close /home/vmuser_iruazhbg/workspace/gfserver.c:67\n    #1 0x403caa in worker_main /home/vmuser_iruazhbg/workspace/gfserver.c:168\n    #2 0x7f006c5ce6b9 in start_thread (/lib/x86_64-linux-gnu/libpthread.so.0+0x76b9)\n    #3 0x7f006c09582c in clone (/lib/x86_64-linux-gnu/libc.so.6+0x10682c)\n\n0x61b00001f658 is located 1240 bytes inside of 1600-byte region [0x61b00001f180,0x61b00001f7c0)\nfreed by thread T0 here:\n    #0 0x7f006c87c2ca in __interceptor_free (/usr/lib/x86_64-linux-gnu/libasan.so.2+0x982ca)\n    #1 0x404d8f in gfserver_stop /home/vmuser_iruazhbg/workspace/gfserver.c:308\n    #2 0x401e65 in _sig_handler /home/vmuser_iruazhbg/workspace/webproxy.c:43\n    #3 0x7f006bfc44af  (/lib/x86_64-linux-gnu/libc.so.6+0x354af)\n    #4 0x404b43 in gfserver_serve /home/vmuser_iruazhbg/workspace/gfserver.c:276\n    #5 0x4022ed in main /home/vmuser_iruazhbg/workspace/webproxy.c:127\n    #6 0x7f006bfaf82f in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2082f)\n\npreviously allocated by thread T0 here:\n    #0 0x7f006c87c602 in malloc (/usr/lib/x86_64-linux-gnu/libasan.so.2+0x98602)\n    #1 0x403de6 in gfserver_init /home/vmuser_iruazhbg/workspace/gfserver.c:184\n    #2 0x4021e1 in main /home/vmuser_iruazhbg/workspace/webproxy.c:113\n    #3 0x7f006bfaf82f in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2082f)\n\nThread T7 created by T0 here:\n    #0 0x7f006c81a253 in pthread_create (/usr/lib/x86_64-linux-gnu/libasan.so.2+0x36253)\n    #1 0x404a06 in gfserver_serve /home/vmuser_iruazhbg/workspace/gfserver.c:266\n    #2 0x4022ed in main /home/vmuser_iruazhbg/workspace/webproxy.c:127\n    #3 0x7f006bfaf82f in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2082f)\n\nSUMMARY: AddressSanitizer: heap-use-after-free /home/vmuser_iruazhbg/workspace/gfserver.c:67 _close\nShadow bytes around the buggy address:\n  0x0c367fffbe70: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd\n  0x0c367fffbe80: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd\n  0x0c367fffbe90: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd\n  0x0c367fffbea0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd\n  0x0c367fffbeb0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd\n=>0x0c367fffbec0: fd fd fd fd fd fd fd fd fd fd fd[fd]fd fd fd fd\n  0x0c367fffbed0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd\n  0x0c367fffbee0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd\n  0x0c367fffbef0: fd fd fd fd fd fd fd fd fa fa fa fa fa fa fa fa\n  0x0c367fffbf00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x0c367fffbf10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\nShadow byte legend (one shadow byte represents 8 application bytes):\n  Addressable:           00\n  Partially addressable: 01 02 03 04 05 06 07 \n  Heap left redzone:       fa\n  Heap right redzone:      fb\n  Freed heap region:       fd\n  Stack left redzone:      f1\n  Stack mid redzone:       f2\n  Stack right redzone:     f3\n  Stack partial redzone:   f4\n  Stack after return:      f5\n  Stack use after scope:   f8\n  Global redzone:          f9\n  Global init order:       f6\n  Poisoned by user:        f7\n  Container overflow:      fc\n  Array cookie:            ac\n  Intra object redzone:    bb\n  ASan internal:           fe\n==120==ABORTING\n"
+            },
+            "traceback": "Traceback (most recent call last):\n  File \"/home/vmuser_iruazhbg/gios.py\", line 249, in func_wrapper\n    ans = func(self)\n  File \"run.py\", line 380, in test_proxy_high_stress\n    self.go(num_client_threads, num_proxy_threads, delay, num_requests, workload_file, answer_log)\n  File \"run.py\", line 222, in go\n    self.assertIsNotNone(self.p_client.poll(), \"The client has not exited within the timeout ({} seconds) and is probably hung.\".format(self.client_timeout))\nAssertionError: The client has not exited within the timeout (20 seconds) and is probably hung.\n",
+            "description": "Test with 3:1 ratio client threads to proxy threads"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "server_returncode": 0,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": ""
+            },
+            "traceback": "Traceback (most recent call last):\n  File \"/home/vmuser_iruazhbg/gios.py\", line 249, in func_wrapper\n    ans = func(self)\n  File \"run.py\", line 354, in test_proxy_multithreaded\n    self.go(num_client_threads, num_proxy_threads, delay, num_requests, workload_file, answer_log)\n  File \"run.py\", line 222, in go\n    self.assertIsNotNone(self.p_client.poll(), \"The client has not exited within the timeout ({} seconds) and is probably hung.\".format(self.client_timeout))\nAssertionError: The client has not exited within the timeout (20 seconds) and is probably hung.\n",
+            "description": "Test with equal number of client and proxy threads"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "server_returncode": 0,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": ""
+            },
+            "traceback": "Traceback (most recent call last):\n  File \"/home/vmuser_iruazhbg/gios.py\", line 249, in func_wrapper\n    ans = func(self)\n  File \"run.py\", line 279, in test_proxy_one_at_a_time\n    self.go(num_client_threads, num_proxy_threads, delay, num_requests, workload_file, answer_log)\n  File \"run.py\", line 222, in go\n    self.assertIsNotNone(self.p_client.poll(), \"The client has not exited within the timeout ({} seconds) and is probably hung.\".format(self.client_timeout))\nAssertionError: The client has not exited within the timeout (20 seconds) and is probably hung.\n",
+            "description": "Tests the proxy behaves as expected when one request is made at a time."
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "server_returncode": 0,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": ""
+            },
+            "traceback": "Traceback (most recent call last):\n  File \"/home/vmuser_iruazhbg/gios.py\", line 249, in func_wrapper\n    ans = func(self)\n  File \"run.py\", line 342, in test_proxy_simul_clients\n    self.go(num_client_threads, num_proxy_threads, delay, num_requests, workload_file, answer_log)\n  File \"run.py\", line 222, in go\n    self.assertIsNotNone(self.p_client.poll(), \"The client has not exited within the timeout ({} seconds) and is probably hung.\".format(self.client_timeout))\nAssertionError: The client has not exited within the timeout (20 seconds) and is probably hung.\n",
+            "description": "Tests the proxy behaves as expected when multiple requests are made simultaneously."
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "server_returncode": 0,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": ""
+            },
+            "traceback": "Traceback (most recent call last):\n  File \"/home/vmuser_iruazhbg/gios.py\", line 249, in func_wrapper\n    ans = func(self)\n  File \"run.py\", line 368, in test_proxy_stress\n    self.go(num_client_threads, num_proxy_threads, delay, num_requests, workload_file, answer_log)\n  File \"run.py\", line 222, in go\n    self.assertIsNotNone(self.p_client.poll(), \"The client has not exited within the timeout ({} seconds) and is probably hung.\".format(self.client_timeout))\nAssertionError: The client has not exited within the timeout (20 seconds) and is probably hung.\n",
+            "description": "Test with 2:1 ratio client threads to proxy threads"
+        },
+        {
+            "output": {
+                "proxy_returncode": 0,
+                "proxy_console": "cc -Wall --std=gnu99 -g3 -Wno-format-security -Werror -fsanitize=address -fno-omit-frame-pointer   -c -o webproxy.o webproxy.c\ncc -Wall --std=gnu99 -g3 -Wno-format-security -Werror -fsanitize=address -fno-omit-frame-pointer   -c -o steque.o steque.c\ncc -Wall --std=gnu99 -g3 -Wno-format-security -Werror -fsanitize=address -fno-omit-frame-pointer   -c -o gfserver.o gfserver.c\ncc -Wall --std=gnu99 -g3 -Wno-format-security -Werror -fsanitize=address -fno-omit-frame-pointer   -c -o handle_with_curl.o handle_with_curl.c\ncc -o webproxy -Wall --std=gnu99 -g3 -Wno-format-security -Werror -fsanitize=address -fno-omit-frame-pointer  webproxy.o steque.o gfserver.o handle_with_curl.o -lpthread -L/usr/lib/x86_64-linux-gnu -lcurl\n",
+                "passfail": "passed"
+            },
+            "traceback": "",
+            "description": "Proxy Compilation Test"
+        }
+    ]
+}

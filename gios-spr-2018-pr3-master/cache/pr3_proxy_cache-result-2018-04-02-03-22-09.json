@@ -1,0 +1,152 @@
+{
+    "tests": [
+        {
+            "output": {
+                "proxy_returncode": 2,
+                "proxy_console": "cc -Wall --std=gnu99 -g3 -Wno-format-security -Werror  -fsanitize=address -fno-omit-frame-pointer   -c -o webproxy.o webproxy.c\nwebproxy.c: In function 'main':\nwebproxy.c:198:8: error: 'msqid' undeclared (first use in this function)\n   if ((msqid = msgget(key, 0666 | IPC_CREAT)) == -1) {\n        ^\nwebproxy.c:198:8: note: each undeclared identifier is reported only once for each function it appears in\n<builtin>: recipe for target 'webproxy.o' failed\nmake: *** [webproxy.o] Error 1\n",
+                "passfail": "failed"
+            },
+            "traceback": "Traceback (most recent call last):\n  File \"/home/vmuser_lhvrsbou/gios.py\", line 249, in func_wrapper\n    ans = func(self)\n  File \"run.py\", line 68, in test_proxy_compiles\n    self.assertEqual(p.returncode, 0, \"Your proxy code did not compile cleanly.\")\nAssertionError: Your proxy code did not compile cleanly.\n",
+            "description": "Proxy Compilation Test"
+        },
+        {
+            "output": {
+                "cached_console": "",
+                "passfail": "passed",
+                "cached_returncode": 0
+            },
+            "traceback": "",
+            "description": "Cache Compilation Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": -1,
+                "cached_returncode": -1,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": -1,
+                "proxy_console": "\nException: proxy server does not exist, cannot run test\n",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Test Cache supporting large segments"
+        },
+        {
+            "output": {
+                "proxy_returncode": -1,
+                "cached_returncode": -1,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": -1,
+                "proxy_console": "\nException: proxy server does not exist, cannot run test\n\nException: proxy server does not exist, cannot run test\n\nException: proxy server does not exist, cannot run test\n\nException: proxy server does not exist, cannot run test\n\nException: proxy server does not exist, cannot run test\n",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Multi-threaded Cache test with simultaneous multi-threaded downloads (mixed file sizes)"
+        },
+        {
+            "output": {
+                "proxy_returncode": -1,
+                "cached_returncode": -1,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": -1,
+                "proxy_console": "\nException: proxy server does not exist, cannot run test\n",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Cache Test with single threaded downloads"
+        },
+        {
+            "output": {
+                "proxy_returncode": -1,
+                "cached_returncode": -1,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": -1,
+                "proxy_console": "\nException: proxy server does not exist, cannot run test\n\nException: proxy server does not exist, cannot run test\n\nException: proxy server does not exist, cannot run test\n\nException: proxy server does not exist, cannot run test\n\nException: proxy server does not exist, cannot run test\n",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Cache Test with simultaneous multi-threaded downloads (mixed file sizes)"
+        },
+        {
+            "output": {
+                "proxy_returncode": -1,
+                "cached_returncode": -1,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": -1,
+                "proxy_console": "\nException: proxy server does not exist, cannot run test\n\nException: proxy server does not exist, cannot run test\n\nException: proxy server does not exist, cannot run test\n\nException: proxy server does not exist, cannot run test\n\nException: proxy server does not exist, cannot run test\n",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Cache Test with simultaneous multi-threaded downloads (small file sizes)"
+        },
+        {
+            "output": {
+                "proxy_returncode": -1,
+                "cached_returncode": -1,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": -1,
+                "proxy_console": "\nException: proxy server does not exist, cannot run test\n\nException: proxy server does not exist, cannot run test\n\nException: proxy server does not exist, cannot run test\n\nException: proxy server does not exist, cannot run test\n\nException: proxy server does not exist, cannot run test\n",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Concurrent Download of Same File Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": -1,
+                "cached_returncode": -1,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": -1,
+                "proxy_console": "\nException: proxy server does not exist, cannot run test\n",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Large File Transfer Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": -1,
+                "cached_returncode": -1,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": -1,
+                "proxy_console": "\nException: proxy server does not exist, cannot run test\n",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Test Cache for multi-threading efficacy (or is it faster with more threads?)"
+        },
+        {
+            "output": {
+                "proxy_returncode": -1,
+                "cached_returncode": -1,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": -1,
+                "proxy_console": "\nException: proxy server does not exist, cannot run test\n",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Non-Existent File Transfer Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": -1,
+                "cached_returncode": -1,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": -1,
+                "proxy_console": "\nException: proxy server does not exist, cannot run test\n",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Small File Transfer Test."
+        }
+    ]
+}

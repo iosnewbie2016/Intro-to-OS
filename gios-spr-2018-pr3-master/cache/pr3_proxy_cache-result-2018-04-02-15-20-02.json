@@ -1,0 +1,152 @@
+{
+    "tests": [
+        {
+            "output": {
+                "cached_console": "",
+                "passfail": "passed",
+                "cached_returncode": 0
+            },
+            "traceback": "",
+            "description": "Cache Compilation Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": 0,
+                "proxy_console": "",
+                "passfail": "passed"
+            },
+            "traceback": "",
+            "description": "Proxy Compilation Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": null,
+                "client_console": "",
+                "passfail": "passed",
+                "client_returncode": 0,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Test Cache supporting large segments"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": null,
+                "client_console": "./bvtclient -s localhost -p 8500 -t 8 -w workload-mixed.txt -r 16 -m udacious.log\n./bvtclient -s localhost -p 8500 -t 8 -w workload-mixed.txt -r 16 -m udacious.log\n./bvtclient -s localhost -p 8500 -t 8 -w workload-mixed.txt -r 16 -m udacious.log\n./bvtclient -s localhost -p 8500 -t 8 -w workload-mixed.txt -r 16 -m udacious.log\n./bvtclient -s localhost -p 8500 -t 8 -w workload-mixed.txt -r 16 -m udacious.log\n",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "Proxy - bytes_transferred: 1047589\nProxy - bytes_transferred: 512\nProxy - bytes_transferred: 1048576\nProxy - bytes_transferred: 612\nProxy - bytes_transferred: 1049563\nProxy - bytes_transferred: 924\nProxy - bytes_transferred: 5241893\nProxy - bytes_transferred: 1024\nProxy - bytes_transferred: 5242880\nProxy - bytes_transferred: 1124\nproxy file read error\nProxy - bytes_transferred: 412\nProxy - bytes_transferred: 1047589\nProxy - bytes_transferred: 512\nProxy - bytes_transferred: 1048576\nProxy - bytes_transferred: 612\nProxy - bytes_transferred: 1047589\nProxy - bytes_transferred: 512\nProxy - bytes_transferred: 1048576\nProxy - bytes_transferred: 612\nProxy - bytes_transferred: 1049563\nProxy - bytes_transferred: 924\nProxy - bytes_transferred: 1024\nProxy - bytes_transferred: 5241893\nProxy - bytes_transferred: 5243867\nProxy - bytes_transferred: 5243867\nProxy - bytes_transferred: 1124\nProxy - bytes_transferred: 1047589\nProxy - bytes_transferred: 412\nProxy - bytes_transferred: 512\nProxy - bytes_transferred: 1048576\nProxy - bytes_transferred: 612\nProxy - bytes_transferred: 512\nproxy file read error\nproxy file read error\nProxy - bytes_transferred: 612\nProxy - bytes_transferred: 1049563\nProxy - bytes_transferred: 6200\n_close:: Connection reset by peer\nProxy - bytes_transferred: 5241893\nProxy - bytes_transferred: 1024\nproxy file read error\nProxy - bytes_transferred: 6200\n_close:: Connection reset by peer\nproxy file read error\nProxy - bytes_transferred: 412\nProxy - bytes_transferred: 1047589\nproxy file read error\nProxy - bytes_transferred: 512\nProxy - bytes_transferred: 612\nProxy - bytes_transferred: 1047589\nProxy - bytes_transferred: 512\nProxy - bytes_transferred: 1048576\nProxy - bytes_transferred: 612\nProxy - bytes_transferred: 1049563\nProxy - bytes_transferred: 924\nProxy - bytes_transferred: 1024\nproxy file read error\nProxy - bytes_transferred: 1124\nProxy - bytes_transferred: 5241893\nproxy file read error\nProxy - bytes_transferred: 412\nProxy - bytes_transferred: 1047589\nProxy - bytes_transferred: 512\nProxy - bytes_transferred: 1048576\nProxy - bytes_transferred: 612\nProxy - bytes_transferred: 1047589\nProxy - bytes_transferred: 512\nProxy - bytes_transferred: 1048576\nProxy - bytes_transferred: 612\nProxy - bytes_transferred: 1049563\nProxy - bytes_transferred: 924\nproxy file read error\nProxy - bytes_transferred: 1024\nProxy - bytes_transferred: 5242880\nProxy - bytes_transferred: 1124\nproxy file read error\nProxy - bytes_transferred: 412\nproxy file read error\nProxy - bytes_transferred: 6200\n_close:: Connection reset by peer\nProxy - bytes_transferred: 1048576\nProxy - bytes_transferred: 612\n\nException: The client has not exited within the timeout (30 seconds) and is probably hung.\n\nException: The contents of at least one of the files was not correct. exec info = {'client workload file': '/412 412\\n/1047589 1047589\\n/512 512\\n/1048576 1048576\\n/612 612\\n/1049563 1049563\\n/924 924\\n/5241893 5241893\\n/1024 1024\\n/5242880 5242880\\n/1124 1124\\n/5243867 5243867\\n', 'cache': ['./bvtcached', '-c', 'workload-mixed.txt', '-t', '8'], 'proxy': ['./webproxy', '-s', 'localhost:8000', '-t', '8', '-z', '4096', '-n', '8', '-p', '8500'], 'cache workload file': '/412 412\\n/1047589 1047589\\n/512 512\\n/1048576 1048576\\n/612 612\\n/1049563 1049563\\n/924 924\\n/5241893 5241893\\n/1024 1024\\n/5242880 5242880\\n/1124 1124\\n/5243867 5243867\\n', 'client': ['./bvtclient', '-w', 'workload-mixed.txt', '-t', '8', '-r', '16', '-p', '8500']}, not_fulfilled = [' /1024', ' /1047589', ' /1047589', ' /1048576', ' /1048576', ' /1049563', ' /1124', ' /412', ' /512', ' /512', ' /5241893', ' /5242880']\n\nException: The client has not exited within the timeout (30 seconds) and is probably hung.\n\nException: The client has not exited within the timeout (30 seconds) and is probably hung.\n\nException: The client has not exited within the timeout (30 seconds) and is probably hung.\n",
+                "cached_console": "Waiting for commands!\nWaiting for commands!\n1047589\n\nCache - bytes_transferred: 1047589\nWaiting for commands!\n512\n\nCache - bytes_transferred: 512\nWaiting for commands!\n1048576\n\nCache - bytes_transferred: 1048576\nWaiting for commands!\n612\n\nCache - bytes_transferred: 612\nWaiting for commands!\n1049563\n\nCache - bytes_transferred: 1049563\n924\n\nCache - bytes_transferred: 924\nWaiting for commands!\nWaiting for commands!\n5241893\n\nCache - bytes_transferred: 5241893\n1024\n\nCache - bytes_transferred: 1024\nWaiting for commands!\nWaiting for commands!\n5242880\n\nCache - bytes_transferred: 5242880\n1124\n\nCache - bytes_transferred: 1124\nWaiting for commands!\nWaiting for commands!\n5243867\n\n412\n\nCache - bytes_transferred: 5243867\nCache - bytes_transferred: 412\nWaiting for commands!\nWaiting for commands!\n1047589\n\nCache - bytes_transferred: 1047589\nWaiting for commands!\n512\n\n1048576\n\nCache - bytes_transferred: 512\nWaiting for commands!\nCache - bytes_transferred: 1048576\n612\n\nWaiting for commands!\nCache - bytes_transferred: 612\nWaiting for commands!\nWaiting for commands!\nWaiting for commands!\n1047589\n\nCache - bytes_transferred: 1047589\nWaiting for commands!\n512\n\nCache - bytes_transferred: 512\nWaiting for commands!\n1048576\n\nCache - bytes_transferred: 1048576\nWaiting for commands!\n612\n\nCache - bytes_transferred: 612\nWaiting for commands!\n1049563\n\nCache - bytes_transferred: 1049563\nWaiting for commands!\n924\n\nCache - bytes_transferred: 924\nWaiting for commands!\n1024\n\nCache - bytes_transferred: 1024\nWaiting for commands!\n5241893\n\n5242880\n\nCache - bytes_transferred: 5241893\nCache - bytes_transferred: 5242880\nWaiting for commands!\nWaiting for commands!\n5243867\n\nCache - bytes_transferred: 5243867\n1124\n\nWaiting for commands!\nCache - bytes_transferred: 1124\nWaiting for commands!\n1047589\n\nCache - bytes_transferred: 1047589\nWaiting for commands!\n412\n\nCache - bytes_transferred: 412\nWaiting for commands!\n512\n\nCache - bytes_transferred: 512\nWaiting for commands!\n1048576\n\nCache - bytes_transferred: 1048576\nWaiting for commands!\n612\n\nCache - bytes_transferred: 612\nWaiting for commands!\n\nReceived signo = 15 in sig_handler()\nmsgrcv: Identifier removed\nWaiting for commands!\nWaiting for commands!\n1047589\n\n512\n\nCache - bytes_transferred: 1047589\nWaiting for commands!\nCache - bytes_transferred: 512\nWaiting for commands!\n1048576\n\n612\n\nCache - bytes_transferred: 1048576\nWaiting for commands!\nCache - bytes_transferred: 612\nWaiting for commands!\n1049563\n\n924\n\nCache - bytes_transferred: 1049563\nWaiting for commands!\nCache - bytes_transferred: 924\nWaiting for commands!\n5241893\n\n1024\n\nCache - bytes_transferred: 5241893\nWaiting for commands!\n1124\n\nCache - bytes_transferred: 1024\nWaiting for commands!\n5242880\n\nCache - bytes_transferred: 5242880\nWaiting for commands!\nCache - bytes_transferred: 1124\nWaiting for commands!\n5243867\n\n412\n\nCache - bytes_transferred: 5243867\nCache - bytes_transferred: 412\nWaiting for commands!\nWaiting for commands!\n1047589\n\nCache - bytes_transferred: 1047589\nWaiting for commands!\n1048576\n\nCache - bytes_transferred: 1048576\nWaiting for commands!\n512\n\nCache - bytes_transferred: 512\nWaiting for commands!\n612\n\nCache - bytes_transferred: 612\nWaiting for commands!\nWaiting for commands!\nWaiting for commands!\n1047589\n\nCache - bytes_transferred: 1047589\nWaiting for commands!\n512\n\nCache - bytes_transferred: 512\nWaiting for commands!\n1048576\n\nCache - bytes_transferred: 1048576\nWaiting for commands!\n612\n\nCache - bytes_transferred: 612\nWaiting for commands!\n1049563\n\nCache - bytes_transferred: 1049563\nWaiting for commands!\n924\n\nCache - bytes_transferred: 924\nWaiting for commands!\n1024\n\nCache - bytes_transferred: 1024\nWaiting for commands!\n5242880\n\nCache - bytes_transferred: 5242880\nWaiting for commands!\n1124\n\nCache - bytes_transferred: 1124\nWaiting for commands!\n5241893\n\n5243867\n\nCache - bytes_transferred: 5241893\nCache - bytes_transferred: 5243867\nWaiting for commands!\nWaiting for commands!\n412\n\n1047589\n\nCache - bytes_transferred: 412\nWaiting for commands!\nCache - bytes_transferred: 1047589\nWaiting for commands!\n512\n\nCache - bytes_transferred: 512\nWaiting for commands!\n1048576\n\nCache - bytes_transferred: 1048576\nWaiting for commands!\n612\n\nCache - bytes_transferred: 612\nWaiting for commands!\nWaiting for commands!\nWaiting for commands!\n1047589\n\n512\n\nCache - bytes_transferred: 1047589\nWaiting for commands!\n1048576\n\nCache - bytes_transferred: 512\nWaiting for commands!\nCache - bytes_transferred: 1048576\n612\n\nCache - bytes_transferred: 612\nWaiting for commands!\n1049563\n\nCache - bytes_transferred: 1049563\nWaiting for commands!\n924\n\nCache - bytes_transferred: 924\nWaiting for commands!\nWaiting for commands!\n5241893\n\n1024\n\nCache - bytes_transferred: 5241893\nCache - bytes_transferred: 1024\nWaiting for commands!\nWaiting for commands!\n5242880\n\nCache - bytes_transferred: 5242880\n1124\n\nWaiting for commands!\nCache - bytes_transferred: 1124\nWaiting for commands!\n5243867\n\n412\n\nCache - bytes_transferred: 5243867\nCache - bytes_transferred: 412\nWaiting for commands!\n1047589\n\nCache - bytes_transferred: 1047589\nWaiting for commands!\n512\n\nCache - bytes_transferred: 512\nWaiting for commands!\n1048576\n\nCache - bytes_transferred: 1048576\nWaiting for commands!\n612\n\nCache - bytes_transferred: 612\nWaiting for commands!\nWaiting for commands!\n"
+            },
+            "traceback": "",
+            "description": "Multi-threaded Cache test with simultaneous multi-threaded downloads (mixed file sizes)"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": null,
+                "client_console": "",
+                "passfail": "passed",
+                "client_returncode": 0,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Cache Test with single threaded downloads"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 1,
+                "client_console": "Log Tail:\nre status 0, failure comment gfr_status == GFR_FILE_NOT_FOUND\n./bvtclient -s localhost -p 8500 -t 10 -w workloadai.txt -r 10 -m udacious.log\n./bvtclient -s localhost -p 8500 -t 10 -w workloadai.txt -r 10 -m udacious.log\n",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "Log Tail:\nb-sample-file-4.png 1273\\n/paraglider.jpg 233174\\n/road.jpg 138177\\n/yellowstone.jpg 104244\\n/moranabovejacksonlake.jpg 452231\\n', 'client': ['./bvtclient', '-w', 'workloadai.txt', '-t', '10', '-r', '10', '-p', '8500']}\n",
+                "cached_console": "Log Tail:\nin worker /home/vmuser_iwhmgvcx/workspace/simplecached.c:188\n    #7 0x7f0f8e3b06b9 in start_thread (/lib/x86_64-linux-gnu/libpthread.so.0+0x76b9)\n    #8 0x7f0f8d7bb82c in clone (/lib/x86_64-linux-gnu/libc.so.6+0x10682c)\n\n"
+            },
+            "traceback": "",
+            "description": "Cache Test with simultaneous multi-threaded downloads (mixed file sizes)"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Cache Test with simultaneous multi-threaded downloads (small file sizes)"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Concurrent Download of Same File Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Large File Transfer Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Test Cache for multi-threading efficacy (or is it faster with more threads?)"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Non-Existent File Transfer Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 1,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Small File Transfer Test."
+        }
+    ]
+}

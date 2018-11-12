@@ -1,0 +1,11 @@
+#Elapsed Time (secs),Bytes Received,Requests Serviced, Requests Failed, Comment
+   0.02923,          0,          0,          1, /courses/ud923/filecorpus/brick.jpg
+   0.03328,          0,          0,          2, /courses/ud923/filecorpus/brick.jpg
+   0.03378,          0,          0,          3, /courses/ud923/filecorpus/brick.jpg
+   0.03424,          0,          0,          4, /courses/ud923/filecorpus/brick.jpg
+   0.03474,          0,          0,          5, /courses/ud923/filecorpus/brick.jpg
+   0.03526,          0,          0,          6, /courses/ud923/filecorpus/brick.jpg
+   0.03574,          0,          0,          7, /courses/ud923/filecorpus/brick.jpg
+   0.03624,          0,          0,          8, /courses/ud923/filecorpus/brick.jpg
+   0.03691,          0,          0,          9, /courses/ud923/filecorpus/brick.jpg
+   0.03729,          0,          0,         10, /courses/ud923/filecorpus/brick.jpg

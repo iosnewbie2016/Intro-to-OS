@@ -1,0 +1,152 @@
+{
+    "tests": [
+        {
+            "output": {
+                "cached_console": "",
+                "passfail": "passed",
+                "cached_returncode": 0
+            },
+            "traceback": "",
+            "description": "Cache Compilation Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": 0,
+                "proxy_console": "",
+                "passfail": "passed"
+            },
+            "traceback": "",
+            "description": "Proxy Compilation Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": null,
+                "client_console": "./bvtclient -s localhost -p 8500 -t 2 -w workload-big.txt -r 16 -m udacious.log\n",
+                "passfail": "failed",
+                "client_returncode": 0,
+                "proxy_console": "Proxy - bytes_transferred: 1049563\nProxy - bytes_transferred: 1049563\n_close:: Connection reset by peer\nProxy - bytes_transferred: 5241893\nProxy - bytes_transferred: 5242880\nProxy - bytes_transferred: 5243867\nProxy - bytes_transferred: 1047589\nProxy - bytes_transferred: 1048576\nProxy - bytes_transferred: 1049563\nProxy - bytes_transferred: 5241893\nProxy - bytes_transferred: 5242880\nProxy - bytes_transferred: 5243867\nProxy - bytes_transferred: 1047589\nProxy - bytes_transferred: 1048576\nProxy - bytes_transferred: 1049563\nProxy - bytes_transferred: 5241893\nProxy - bytes_transferred: 5242880\n\nException: The contents of at least one of the files was not correct. exec info = {'client workload file': '/1047589 1047589\\n/1048576 1048576\\n/1049563 1049563\\n/5241893 5241893\\n/5242880 5242880\\n/5243867 5243867\\n', 'cache': ['./bvtcached', '-c', 'workload-big.txt', '-t', '2'], 'proxy': ['./webproxy', '-s', 'localhost:8000', '-t', '2', '-z', '65536', '-n', '2', '-p', '8500'], 'cache workload file': '/1047589 1047589\\n/1048576 1048576\\n/1049563 1049563\\n/5241893 5241893\\n/5242880 5242880\\n/5243867 5243867\\n', 'client': ['./bvtclient', '-w', 'workload-big.txt', '-t', '2', '-r', '16', '-p', '8500']}, not_fulfilled = [' /1047589', ' /1047589', ' /1048576', ' /1048576', ' /1048576', ' /1049563']\n",
+                "cached_console": "Cache - bytes_transferred: 1048576\nCache - bytes_transferred: 1049563\nCache - bytes_transferred: 5241893\nCache - bytes_transferred: 5242880\nCache - bytes_transferred: 5243867\nCache - bytes_transferred: 1047589\nCache - bytes_transferred: 1048576\nCache - bytes_transferred: 1049563\nCache - bytes_transferred: 5241893\nCache - bytes_transferred: 5242880\nCache - bytes_transferred: 5243867\nCache - bytes_transferred: 1047589\nCache - bytes_transferred: 1048576\nCache - bytes_transferred: 1049563\nCache - bytes_transferred: 5241893\nCache - bytes_transferred: 5242880\n\nReceived signo = 15 in sig_handler()\n"
+            },
+            "traceback": "",
+            "description": "Test Cache supporting large segments"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": null,
+                "client_console": "./bvtclient -s localhost -p 8500 -t 8 -w workload-mixed.txt -r 16 -m udacious.log\n./bvtclient -s localhost -p 8500 -t 8 -w workload-mixed.txt -r 16 -m udacious.log\n./bvtclient -s localhost -p 8500 -t 8 -w workload-mixed.txt -r 16 -m udacious.log\n./bvtclient -s localhost -p 8500 -t 8 -w workload-mixed.txt -r 16 -m udacious.log\n./bvtclient -s localhost -p 8500 -t 8 -w workload-mixed.txt -r 16 -m udacious.log\n",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "Proxy - bytes_transferred: 1047589\nProxy - bytes_transferred: 512\nproxy file read error\nProxy - bytes_transferred: 612\nProxy - bytes_transferred: 1049563\nProxy - bytes_transferred: 924\nproxy file read error\nProxy - bytes_transferred: 1024\nProxy - bytes_transferred: 5242880\nProxy - bytes_transferred: 1124\nProxy - bytes_transferred: 412\nproxy file read error\nProxy - bytes_transferred: 1047589\nProxy - bytes_transferred: 512\nproxy file read error\nProxy - bytes_transferred: 612\nProxy - bytes_transferred: 1047589\nProxy - bytes_transferred: 512\nproxy file read error\nProxy - bytes_transferred: 612\nProxy - bytes_transferred: 1049563\nProxy - bytes_transferred: 924\nproxy file read error\nProxy - bytes_transferred: 6200\n_close:: Connection reset by peer\nproxy file read error\nProxy - bytes_transferred: 1124\nProxy - bytes_transferred: 5243867\nProxy - bytes_transferred: 412\nProxy - bytes_transferred: 1047589\nProxy - bytes_transferred: 512\nProxy - bytes_transferred: 1048576\nProxy - bytes_transferred: 612\nProxy - bytes_transferred: 512\nProxy - bytes_transferred: 612\nproxy file read error\nProxy - bytes_transferred: 1049563\nProxy - bytes_transferred: 1047800\nproxy file read error\nProxy - bytes_transferred: 1024\nProxy - bytes_transferred: 924\nProxy - bytes_transferred: 6200\n_close:: Connection reset by peer\nProxy - bytes_transferred: 5243867\nProxy - bytes_transferred: 5243867\nProxy - bytes_transferred: 1047589\nProxy - bytes_transferred: 412\nProxy - bytes_transferred: 512\nproxy file read error\nProxy - bytes_transferred: 612\nProxy - bytes_transferred: 512\nProxy - bytes_transferred: 612\nproxy file read error\nProxy - bytes_transferred: 1047589\nProxy - bytes_transferred: 1049563\nProxy - bytes_transferred: 924\nProxy - bytes_transferred: 6200\n_close:: Connection reset by peer\nProxy - bytes_transferred: 5242880\nproxy file read error\nProxy - bytes_transferred: 412\nproxy file read error\nproxy file read error\nProxy - bytes_transferred: 1047589\nProxy - bytes_transferred: 512\nProxy - bytes_transferred: 1048576\nProxy - bytes_transferred: 612\nProxy - bytes_transferred: 1048576\nProxy - bytes_transferred: 512\nProxy - bytes_transferred: 1049563\nProxy - bytes_transferred: 612\nProxy - bytes_transferred: 5241893\nProxy - bytes_transferred: 924\nProxy - bytes_transferred: 1047589\nProxy - bytes_transferred: 1024\nProxy - bytes_transferred: 5242880\nProxy - bytes_transferred: 1124\nProxy - bytes_transferred: 1047589\nProxy - bytes_transferred: 6200\n_close:: Connection reset by peer\nproxy file read error\nProxy - bytes_transferred: 512\nProxy - bytes_transferred: 1048576\nProxy - bytes_transferred: 612\n\nException: The client has not exited within the timeout (30 seconds) and is probably hung.\n\nException: The client has not exited within the timeout (30 seconds) and is probably hung.\n\nException: The client has not exited within the timeout (30 seconds) and is probably hung.\n\nException: The client has not exited within the timeout (30 seconds) and is probably hung.\n\nException: The client has not exited within the timeout (30 seconds) and is probably hung.\n",
+                "cached_console": "Cache - bytes_transferred: 1047589\nCache - bytes_transferred: 512\nCache - bytes_transferred: 1048576\nCache - bytes_transferred: 612\nCache - bytes_transferred: 1049563\nCache - bytes_transferred: 924\nCache - bytes_transferred: 5241893\nCache - bytes_transferred: 1024\nCache - bytes_transferred: 5242880\nCache - bytes_transferred: 1124\nCache - bytes_transferred: 5243867\nCache - bytes_transferred: 412\nCache - bytes_transferred: 1047589\nCache - bytes_transferred: 512\nCache - bytes_transferred: 1048576\nCache - bytes_transferred: 612\nCache - bytes_transferred: 1047589\nCache - bytes_transferred: 512\nCache - bytes_transferred: 1048576\nCache - bytes_transferred: 612\nCache - bytes_transferred: 1049563\nCache - bytes_transferred: 924\nCache - bytes_transferred: 5241893\nCache - bytes_transferred: 1024\nCache - bytes_transferred: 5242880\nCache - bytes_transferred: 1124\nCache - bytes_transferred: 5243867\nCache - bytes_transferred: 412\nCache - bytes_transferred: 1047589\nCache - bytes_transferred: 512\nCache - bytes_transferred: 1048576\nCache - bytes_transferred: 612\nCache - bytes_transferred: 512\nCache - bytes_transferred: 612\nCache - bytes_transferred: 1048576\nCache - bytes_transferred: 1047589\nCache - bytes_transferred: 1049563\nCache - bytes_transferred: 5241893\nCache - bytes_transferred: 1024\nCache - bytes_transferred: 924\nCache - bytes_transferred: 5242880\nCache - bytes_transferred: 1124\nCache - bytes_transferred: 5243867\nCache - bytes_transferred: 1047589\nCache - bytes_transferred: 412\nCache - bytes_transferred: 512\nCache - bytes_transferred: 1048576\nCache - bytes_transferred: 612\nCache - bytes_transferred: 512\nCache - bytes_transferred: 612\nCache - bytes_transferred: 1048576\nCache - bytes_transferred: 1047589\nCache - bytes_transferred: 1049563\nCache - bytes_transferred: 924\nCache - bytes_transferred: 1024\nCache - bytes_transferred: 5242880\nCache - bytes_transferred: 5241893\nCache - bytes_transferred: 5243867\nCache - bytes_transferred: 1124\nCache - bytes_transferred: 412\nCache - bytes_transferred: 1047589\nCache - bytes_transferred: 512\nCache - bytes_transferred: 1048576\nCache - bytes_transferred: 612\nCache - bytes_transferred: 1048576\nCache - bytes_transferred: 512\nCache - bytes_transferred: 1049563\nCache - bytes_transferred: 612\nCache - bytes_transferred: 5241893\nCache - bytes_transferred: 924\nCache - bytes_transferred: 1047589\nCache - bytes_transferred: 1024\nCache - bytes_transferred: 5242880\nCache - bytes_transferred: 1124\nCache - bytes_transferred: 5243867\nCache - bytes_transferred: 412\nCache - bytes_transferred: 1047589\nCache - bytes_transferred: 512\nCache - bytes_transferred: 1048576\nCache - bytes_transferred: 612\n"
+            },
+            "traceback": "",
+            "description": "Multi-threaded Cache test with simultaneous multi-threaded downloads (mixed file sizes)"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "./bvtclient -s localhost -p 8500 -t 1 -w workloadai.txt -r 10 -m udacious.log\nFile /notthere.png (expected size = 1024) download failure. failure status 0, failure comment gfr_status == GFR_FILE_NOT_FOUND\n",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "Proxy - bytes_transferred: 1034\nProxy - bytes_transferred: 1073\nProxy - bytes_transferred: 1295\nProxy - bytes_transferred: 1273\n\nException: The cache terminated during testing {'client workload file': '/1kb-sample-file-0.png 1270\\n/1kb-sample-file-1.html 1034\\n/1kb-sample-file-2.png 1073\\n/1kb-sample-file-3.jpg 1295\\n/1kb-sample-file-4.png 1273\\n/notthere.png 1024\\n/paraglider.jpg 233174\\n/road.jpg 138177\\n/yellowstone.jpg 104244\\n/moranabovejacksonlake.jpg 452231\\n', 'cache': ['./bvtcached', '-c', 'workloadai-cache.txt', '-t', '1'], 'proxy': ['./webproxy', '-s', 'localhost:8000', '-t', '1', '-z', '4096', '-n', '1', '-p', '8500'], 'cache workload file': '/1kb-sample-file-0.png 1270\\n/1kb-sample-file-1.html 1034\\n/1kb-sample-file-2.png 1073\\n/1kb-sample-file-3.jpg 1295\\n/1kb-sample-file-4.png 1273\\n/paraglider.jpg 233174\\n/road.jpg 138177\\n/yellowstone.jpg 104244\\n/moranabovejacksonlake.jpg 452231\\n', 'client': ['./bvtclient', '-w', 'workloadai.txt', '-t', '1', '-r', '10', '-p', '8500']}\n",
+                "cached_console": "Cache - bytes_transferred: 1034\nCache - bytes_transferred: 1073\nCache - bytes_transferred: 1295\nCache - bytes_transferred: 1273\n"
+            },
+            "traceback": "",
+            "description": "Cache Test with single threaded downloads"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 1,
+                "client_console": "Log Tail:\nt -r 10 -m udacious.log\n./bvtclient -s localhost -p 8500 -t 10 -w workloadai.txt -r 10 -m udacious.log\n./bvtclient -s localhost -p 8500 -t 10 -w workloadai.txt -r 10 -m udacious.log\n./bvtclient -s localhost -p 8500 -t 10 -w workloadai.txt -r 10 -m udacious.log\n",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "Log Tail:\nng 1073\\n/1kb-sample-file-3.jpg 1295\\n/1kb-sample-file-4.png 1273\\n/paraglider.jpg 233174\\n/road.jpg 138177\\n/yellowstone.jpg 104244\\n/moranabovejacksonlake.jpg 452231\\n', 'client': ['./bvtclient', '-w', 'workloadai.txt', '-t', '10', '-r', '10', '-p', '8500']}\n",
+                "cached_console": "Log Tail:\ne/bvtcached+0x474b23)\n    #6 0x4b1b57 in main /home/vmuser_liwyhdbj/workspace/simplecached.c:243\n    #7 0x7f4b002f582f in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2082f)\n    #8 0x405808 in _start (/home/vmuser_liwyhdbj/workspace/bvtcached+0x405808)\n\n"
+            },
+            "traceback": "",
+            "description": "Cache Test with simultaneous multi-threaded downloads (mixed file sizes)"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Cache Test with simultaneous multi-threaded downloads (small file sizes)"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 1,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Concurrent Download of Same File Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Large File Transfer Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 1,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Test Cache for multi-threading efficacy (or is it faster with more threads?)"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 1,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Non-Existent File Transfer Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Small File Transfer Test."
+        }
+    ]
+}

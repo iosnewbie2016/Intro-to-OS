@@ -1,0 +1,152 @@
+{
+    "tests": [
+        {
+            "output": {
+                "cached_console": "",
+                "passfail": "passed",
+                "cached_returncode": 0
+            },
+            "traceback": "",
+            "description": "Cache Compilation Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": 0,
+                "proxy_console": "",
+                "passfail": "passed"
+            },
+            "traceback": "",
+            "description": "Proxy Compilation Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": null,
+                "client_console": "./bvtclient -s localhost -p 8500 -t 2 -w workload-big.txt -r 16 -m udacious.log\n",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "Process ID: 106, Thread ID: 139803651733248\nProcess ID: 106, Thread ID: 139803643340544\nProxy - bytes_transferred: 1048576\n\nProxy - bytes_transferred: 1049563\n\nProcess ID: 106, Thread ID: 139803651733248\nProcess ID: 106, Thread ID: 139803643340544\nProxy - bytes_transferred: 5241893\n\nProxy - bytes_transferred: 5242880\n\nProcess ID: 106, Thread ID: 139803651733248\nProcess ID: 106, Thread ID: 139803643340544\nproxy file read error\nProxy - bytes_transferred: 1047589\n\nProcess ID: 106, Thread ID: 139803643340544\nProxy - bytes_transferred: 1048576\n\nProcess ID: 106, Thread ID: 139803643340544\nProxy - bytes_transferred: 1049563\n\nProcess ID: 106, Thread ID: 139803643340544\nProxy - bytes_transferred: 5241893\n\nProcess ID: 106, Thread ID: 139803643340544\nProxy - bytes_transferred: 5242880\n\nProcess ID: 106, Thread ID: 139803643340544\nProxy - bytes_transferred: 5243867\n\nProcess ID: 106, Thread ID: 139803643340544\nProxy - bytes_transferred: 1047589\n\nProcess ID: 106, Thread ID: 139803643340544\nProxy - bytes_transferred: 1048576\n\nProcess ID: 106, Thread ID: 139803643340544\nProxy - bytes_transferred: 1049563\n\nProcess ID: 106, Thread ID: 139803643340544\nProxy - bytes_transferred: 5241893\n\nProcess ID: 106, Thread ID: 139803643340544\nProxy - bytes_transferred: 5242880\n\n\nException: The client has not exited within the timeout (10 seconds) and is probably hung.\n",
+                "cached_console": "Cache - bytes_transferred: 1048576\nCache - bytes_transferred: 1049563\nCache - bytes_transferred: 5241893\nCache - bytes_transferred: 5242880\nCache - bytes_transferred: 5243867\nCache - bytes_transferred: 1047589\nCache - bytes_transferred: 1048576\nCache - bytes_transferred: 1049563\nCache - bytes_transferred: 5241893\nCache - bytes_transferred: 5242880\nCache - bytes_transferred: 5243867\nCache - bytes_transferred: 1047589\nCache - bytes_transferred: 1048576\nCache - bytes_transferred: 1049563\nCache - bytes_transferred: 5241893\nCache - bytes_transferred: 5242880\n"
+            },
+            "traceback": "",
+            "description": "Test Cache supporting large segments"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": null,
+                "client_console": "./bvtclient -s localhost -p 8500 -t 8 -w workload-mixed.txt -r 16 -m udacious.log\n./bvtclient -s localhost -p 8500 -t 8 -w workload-mixed.txt -r 16 -m udacious.log\n./bvtclient -s localhost -p 8500 -t 8 -w workload-mixed.txt -r 16 -m udacious.log\n./bvtclient -s localhost -p 8500 -t 8 -w workload-mixed.txt -r 16 -m udacious.log\n./bvtclient -s localhost -p 8500 -t 8 -w workload-mixed.txt -r 16 -m udacious.log\n",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "Log Tail:\nnection reset by peer\nProcess ID: 228, Thread ID: 140131768964864\n_close:: Connection reset by peer\n_close:: Connection reset by peer\nProcess ID: 228, Thread ID: 140131819321088\nProcess ID: 228, Thread ID: 140131794142976\nProxy - bytes_transferred: 1047800\n\nProxy - bytes_transferred: 5241893\n\nProxy - bytes_transferred: 1024\n\nProcess ID: 228, Thread ID: 140131802535680\n_close:: Connection reset by peer\nProcess ID: 228, Thread ID: 140131785750272\nProcess ID: 228, Thread ID: 140131810928384\nProxy - bytes_transferred: 5243867\n\nProxy - bytes_transferred: 5243867\n\nProxy - bytes_transferred: 1124\n\nProcess ID: 228, Thread ID: 140131794142976\nProxy - bytes_transferred: 412\n\nProcess ID: 228, Thread ID: 140131802535680\nProxy - bytes_transferred: 1047589\n\nProxy - bytes_transferred: 512\n\nproxy file read error\nProxy - bytes_transferred: 612\n\nProcess ID: 289, Thread ID: 139703326074624\nProcess ID: 289, Thread ID: 139703292503808\nProcess ID: 289, Thread ID: 139703284111104\nProcess ID: 289, Thread ID: 139703300896512\nProcess ID: 289, Thread ID: 139703309289216\nProxy - bytes_transferred: 512\n\nProcess ID: 289, Thread ID: 139703317681920\nProxy - bytes_transferred: 612\n\nProcess ID: 289, Thread ID: 139703334467328\nProcess ID: 289, Thread ID: 139703326074624\nproxy file read error\nProxy - bytes_transferred: 924\n\nProcess ID: 289, Thread ID: 139703292503808\nProcess ID: 289, Thread ID: 139703300896512\nProcess ID: 289, Thread ID: 139703275718400\nProxy - bytes_transferred: 1047589\n\nproxy file read error\nProcess ID: 289, Thread ID: 139703317681920\nProxy - bytes_transferred: 5242880\n\nProxy - bytes_transferred: 5242880\n\nProxy - bytes_transferred: 5243867\n\nProxy - bytes_transferred: 1124\n\nProcess ID: 289, Thread ID: 139703300896512\nProxy - bytes_transferred: 1024\n\nProcess ID: 289, Thread ID: 139703275718400\nProxy - bytes_transferred: 412\n\nProcess ID: 289, Thread ID: 139703317681920\nproxy file read error\nProxy - bytes_transferred: 512\n\nProcess ID: 289, Thread ID: 139703275718400\nProxy - bytes_transferred: 1048576\n\nProxy - bytes_transferred: 612\n\n_close:: Connection reset by peer\nProcess ID: 349, Thread ID: 140399623526144\nProcess ID: 349, Thread ID: 140399598348032\nProcess ID: 349, Thread ID: 140399640311552\nProxy - bytes_transferred: 1047800\n\nProcess ID: 349, Thread ID: 140399615133440\nProcess ID: 349, Thread ID: 140399606740736\nProcess ID: 349, Thread ID: 140399589955328\nProcess ID: 349, Thread ID: 140399581562624\nProcess ID: 349, Thread ID: 140399631918848\nProxy - bytes_transferred: 1048576\n\nProxy - bytes_transferred: 512\n\nProcess ID: 349, Thread ID: 140399640311552\nProxy - bytes_transferred: 924\n\nProcess ID: 349, Thread ID: 140399615133440\nproxy file read error\nProxy - bytes_transferred: 6200\n\n_close:: Connection reset by peer\nProcess ID: 349, Thread ID: 140399589955328\nProcess ID: 349, Thread ID: 140399623526144\nProxy - bytes_transferred: 1024\n\nProcess ID: 349, Thread ID: 140399631918848\nProcess ID: 349, Thread ID: 140399598348032\nProxy - bytes_transferred: 5242880\n\nProxy - bytes_transferred: 5242880\n\nProxy - bytes_transferred: 1124\n\nProcess ID: 349, Thread ID: 140399615133440\nProxy - bytes_transferred: 5243867\n\n_close:: Connection reset by peer\nProcess ID: 349, Thread ID: 140399581562624\nProxy - bytes_transferred: 412\n\nProxy - bytes_transferred: 1047589\n\nProxy - bytes_transferred: 512\n\nProxy - bytes_transferred: 1048576\n\nProxy - bytes_transferred: 612\n\nProcess ID: 412, Thread ID: 140329313363712\nProcess ID: 412, Thread ID: 140329296578304\nProcess ID: 412, Thread ID: 140329288185600\nProcess ID: 412, Thread ID: 140329279792896\nProcess ID: 412, Thread ID: 140329271400192\nProcess ID: 412, Thread ID: 140329263007488\nProcess ID: 412, Thread ID: 140329321756416\nProcess ID: 412, Thread ID: 140329304971008\nProxy - bytes_transferred: 512\n\nProcess ID: 412, Thread ID: 140329313363712\nproxy file read error\nProxy - bytes_transferred: 924\n\nProxy - bytes_transferred: 6200\n\nProcess ID: 412, Thread ID: 140329271400192\n_close:: Connection reset by peer\nProcess ID: 412, Thread ID: 140329288185600\nProxy - bytes_transferred: 1054000\n\nProxy - bytes_transferred: 5241893\n\n_close:: Connection reset by peer\nProcess ID: 412, Thread ID: 140329279792896\nproxy file read error\nProxy - bytes_transferred: 6200\n\n_close:: Connection reset by peer\nProcess ID: 412, Thread ID: 140329304971008\nProxy - bytes_transferred: 5242880\n\nProxy - bytes_transferred: 1124\n\nProcess ID: 412, Thread ID: 140329271400192\nProxy - bytes_transferred: 5243867\n\nProcess ID: 412, Thread ID: 140329263007488\nProxy - bytes_transferred: 412\n\nProcess ID: 412, Thread ID: 140329279792896\nProxy - bytes_transferred: 1047589\n\nProxy - bytes_transferred: 512\n\nProxy - bytes_transferred: 1048576\n\nProxy - bytes_transferred: 612\n\n\nException: The client has not exited within the timeout (30 seconds) and is probably hung.\n\nException: The client has not exited within the timeout (30 seconds) and is probably hung.\n\nException: The client has not exited within the timeout (30 seconds) and is probably hung.\n\nException: The client has not exited within the timeout (30 seconds) and is probably hung.\n\nException: The client has not exited within the timeout (30 seconds) and is probably hung.\n",
+                "cached_console": "Cache - bytes_transferred: 512\nCache - bytes_transferred: 1048576\nCache - bytes_transferred: 1047589\nCache - bytes_transferred: 924\nCache - bytes_transferred: 612\nCache - bytes_transferred: 5241893\nCache - bytes_transferred: 1049563\nCache - bytes_transferred: 1024\nCache - bytes_transferred: 5242880\nCache - bytes_transferred: 1124\nCache - bytes_transferred: 5243867\nCache - bytes_transferred: 412\nCache - bytes_transferred: 1047589\nCache - bytes_transferred: 512\nCache - bytes_transferred: 1048576\nCache - bytes_transferred: 612\nCache - bytes_transferred: 1048576\nCache - bytes_transferred: 612\nCache - bytes_transferred: 512\nCache - bytes_transferred: 924\nCache - bytes_transferred: 1049563\nCache - bytes_transferred: 1047589\nCache - bytes_transferred: 5241893\nCache - bytes_transferred: 1024\nCache - bytes_transferred: 5242880\nCache - bytes_transferred: 5243867\nCache - bytes_transferred: 1124\nCache - bytes_transferred: 412\nCache - bytes_transferred: 1047589\nCache - bytes_transferred: 512\nCache - bytes_transferred: 1048576\nCache - bytes_transferred: 612\nCache - bytes_transferred: 512\nCache - bytes_transferred: 612\nCache - bytes_transferred: 1049563\nCache - bytes_transferred: 924\nCache - bytes_transferred: 1048576\nCache - bytes_transferred: 1047589\nCache - bytes_transferred: 5241893\nCache - bytes_transferred: 5242880\nCache - bytes_transferred: 5243867\nCache - bytes_transferred: 1124\nCache - bytes_transferred: 1024\nCache - bytes_transferred: 412\nCache - bytes_transferred: 1047589\nCache - bytes_transferred: 512\nCache - bytes_transferred: 1048576\nCache - bytes_transferred: 612\nCache - bytes_transferred: 1047589\nCache - bytes_transferred: 1048576\nCache - bytes_transferred: 512\nCache - bytes_transferred: 924\nCache - bytes_transferred: 1049563\nCache - bytes_transferred: 612\nCache - bytes_transferred: 5241893\nCache - bytes_transferred: 1024\nCache - bytes_transferred: 5242880\nCache - bytes_transferred: 1124\nCache - bytes_transferred: 5243867\nCache - bytes_transferred: 412\nCache - bytes_transferred: 1047589\nCache - bytes_transferred: 512\nCache - bytes_transferred: 1048576\nCache - bytes_transferred: 612\nCache - bytes_transferred: 512\nCache - bytes_transferred: 1048576\nCache - bytes_transferred: 612\nCache - bytes_transferred: 1049563\nCache - bytes_transferred: 924\nCache - bytes_transferred: 5241893\nCache - bytes_transferred: 1047589\nCache - bytes_transferred: 1024\nCache - bytes_transferred: 5242880\nCache - bytes_transferred: 1124\nCache - bytes_transferred: 5243867\nCache - bytes_transferred: 412\nCache - bytes_transferred: 1047589\nCache - bytes_transferred: 512\nCache - bytes_transferred: 1048576\nCache - bytes_transferred: 612\n"
+            },
+            "traceback": "",
+            "description": "Multi-threaded Cache test with simultaneous multi-threaded downloads (mixed file sizes)"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Cache Test with single threaded downloads"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Cache Test with simultaneous multi-threaded downloads (mixed file sizes)"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Cache Test with simultaneous multi-threaded downloads (small file sizes)"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 1,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Concurrent Download of Same File Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Large File Transfer Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 1,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Test Cache for multi-threading efficacy (or is it faster with more threads?)"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 1,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Non-Existent File Transfer Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Small File Transfer Test."
+        }
+    ]
+}

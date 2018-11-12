@@ -1,0 +1,152 @@
+{
+    "tests": [
+        {
+            "output": {
+                "cached_console": "",
+                "passfail": "passed",
+                "cached_returncode": 0
+            },
+            "traceback": "",
+            "description": "Cache Compilation Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": 0,
+                "proxy_console": "",
+                "passfail": "passed"
+            },
+            "traceback": "",
+            "description": "Proxy Compilation Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "./bvtclient -s localhost -p 8500 -t 2 -w workload-big.txt -r 16 -m udacious.log\n_send: Connection reset by peer\nFailed to connect.  Trying again....\n_send: Connection reset by peer\nFile /1048576 (expected size = 1048576) download failure. failure status -3, failure comment _send failed\nFailed to connect.  Trying again....\nFile /1049563 (expected size = 1049563) download failure. failure status -3, failure comment _send failed\nFailed to connect.  Trying again....\nFailed to connect.  Trying again....\n",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "Process ID: 106, Thread ID: 140587134084864\nftok: cache to proxy: No such file or directory\n\nException: The cache terminated during testing {'client workload file': '/1047589 1047589\\n/1048576 1048576\\n/1049563 1049563\\n/5241893 5241893\\n/5242880 5242880\\n/5243867 5243867\\n', 'cache': ['./bvtcached', '-c', 'workload-big.txt', '-t', '2'], 'proxy': ['./webproxy', '-s', 'localhost:8000', '-t', '2', '-z', '65536', '-n', '2', '-p', '8500'], 'cache workload file': '/1047589 1047589\\n/1048576 1048576\\n/1049563 1049563\\n/5241893 5241893\\n/5242880 5242880\\n/5243867 5243867\\n', 'client': ['./bvtclient', '-w', 'workload-big.txt', '-t', '2', '-r', '16', '-p', '8500']}\n",
+                "cached_console": "ftok: cache to proxy: No such file or directory\n"
+            },
+            "traceback": "",
+            "description": "Test Cache supporting large segments"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "Log Tail:\ntus -3, failure comment _send failed\nFile /1049563 (expected size = 1049563) download failure. failure status -3, failure comment _send failed\nFile /924 (expected size = 924) download failure. failure status -3, failure comment _send failed\nFile /5241893 (expected size = 5241893) download failure. failure status -3, failure comment _send failed\n./bvtclient -s localhost -p 8500 -t 8 -w workload-mixed.txt -r 16 -m udacious.log\n_send: Connection reset by peer\n_send: Connection reset by peer\n_send: Connection reset by peer\n_send: Connection reset by peer\n_send: Connection reset by peer\n_send: Connection reset by peer\nFailed to connect.  Trying again....\n_send: Connection reset by peer\nFailed to connect.  Trying again....\nFailed to connect.  Trying again....\nFailed to connect.  Trying again....\nFailed to connect.  Trying again....\nFailed to connect.  Trying again....\nFailed to connect.  Trying again....\nFile /612 (expected size = 612) download failure. failure status -3, failure comment _send failed\nFile /1048576 (expected size = 1048576) download failure. failure status -3, failure comment _send failed\nFile /1024 (expected size = 1024) download failure. failure status -3, failure comment _send failed\nFile /5241893 (expected size = 5241893) download failure. failure status -3, failure comment _send failed\nFile /1049563 (expected size = 1049563) download failure. failure status -3, failure comment _send failed\nFile /924 (expected size = 924) download failure. failure status -3, failure comment _send failed\nFile /1047589 (expected size = 1047589) download failure. failure status -3, failure comment _send failed\n./bvtclient -s localhost -p 8500 -t 8 -w workload-mixed.txt -r 16 -m udacious.log\n_send: Connection reset by peer\n_send: Connection reset by peer\nFailed to connect.  Trying again....\nFailed to connect.  Trying again....\nFailed to connect.  Trying again....\nFailed to connect.  Trying again....\nFailed to connect.  Trying again....\nFailed to connect.  Trying again....\nFailed to connect.  Trying again....\nFailed to connect.  Trying again....\nFile /512 (expected size = 512) download failure. failure status -3, failure comment _send failed\nFile /1047589 (expected size = 1047589) download failure. failure status -3, failure comment _send failed\n./bvtclient -s localhost -p 8500 -t 8 -w workload-mixed.txt -r 16 -m udacious.log\n_send: Connection reset by peer\n_send: Connection reset by peer\nFailed to connect.  Trying again....\n_send: Connection reset by peer\n_send: Connection reset by peer\n_send: Connection reset by peer\n_send: Connection reset by peer\nFailed to connect.  Trying again....\nFailed to connect.  Trying again....\nFailed to connect.  Trying again....\nFailed to connect.  Trying again....\nFailed to connect.  Trying again....\nFailed to connect.  Trying again....\nFailed to connect.  Trying again....\nFile /5241893 (expected size = 5241893) download failure. failure status -3, failure comment _send failed\nFile /1049563 (expected size = 1049563) download failure. failure status -3, failure comment _send failed\nFile /1048576 (expected size = 1048576) download failure. failure status -3, failure comment _send failed\nFile /1047589 (expected size = 1047589) download failure. failure status -3, failure comment _send failed\nFile /612 (expected size = 612) download failure. failure status -3, failure comment _send failed\nFile /512 (expected size = 512) download failure. failure status -3, failure comment _send failed\n./bvtclient -s localhost -p 8500 -t 8 -w workload-mixed.txt -r 16 -m udacious.log\n_send: Connection reset by peer\nFailed to connect.  Trying again....\n_send: Connection reset by peer\nFailed to connect.  Trying again....\n_send: Connection reset by peer\nFailed to connect.  Trying again....\n_send: Connection reset by peer\nFailed to connect.  Trying again....\nFile /612 (expected size = 612) download failure. failure status -3, failure comment _send failed\nFile /1048576 (expected size = 1048576) download failure. failure status -3, failure comment _send failed\nFile /512 (expected size = 512) download failure. failure status -3, failure comment _send failed\nFile /1047589 (expected size = 1047589) download failure. failure status -3, failure comment _send failed\nFailed to connect.  Trying again....\nFailed to connect.  Trying again....\nFailed to connect.  Trying again....\nFailed to connect.  Trying again....\n",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "Log Tail:\nproxy: No such file or directory\nProcess ID: 155, Thread ID: 140669717837568\nftok: cache to proxy: No such file or directory\nProcess ID: 210, Thread ID: 139812819433216\nftok: cache to proxy: No such file or directory\nProcess ID: 210, Thread ID: 139812785862400\nftok: cache to proxy: No such file or directory\nProcess ID: 266, Thread ID: 140157032322816\nftok: cache to proxy: No such file or directory\nProcess ID: 266, Thread ID: 140157023930112\nftok: cache to proxy: No such file or directory\nProcess ID: 317, Thread ID: 140676881708800\nftok: cache to proxy: No such file or directory\nProcess ID: 317, Thread ID: 140676873316096\nftok: cache to proxy: No such file or directory\nProcess ID: 372, Thread ID: 139794143246080\nftok: cache to proxy: No such file or directory\nProcess ID: 372, Thread ID: 139794126460672\nftok: cache to proxy: No such file or directory\n\nException: The cache terminated during testing {'client workload file': '/412 412\\n/1047589 1047589\\n/512 512\\n/1048576 1048576\\n/612 612\\n/1049563 1049563\\n/924 924\\n/5241893 5241893\\n/1024 1024\\n/5242880 5242880\\n/1124 1124\\n/5243867 5243867\\n', 'cache': ['./bvtcached', '-c', 'workload-mixed.txt', '-t', '8'], 'proxy': ['./webproxy', '-s', 'localhost:8000', '-t', '8', '-z', '4096', '-n', '8', '-p', '8500'], 'cache workload file': '/412 412\\n/1047589 1047589\\n/512 512\\n/1048576 1048576\\n/612 612\\n/1049563 1049563\\n/924 924\\n/5241893 5241893\\n/1024 1024\\n/5242880 5242880\\n/1124 1124\\n/5243867 5243867\\n', 'client': ['./bvtclient', '-w', 'workload-mixed.txt', '-t', '8', '-r', '16', '-p', '8500']}\n\nException: The cache terminated during testing {'client workload file': '/412 412\\n/1047589 1047589\\n/512 512\\n/1048576 1048576\\n/612 612\\n/1049563 1049563\\n/924 924\\n/5241893 5241893\\n/1024 1024\\n/5242880 5242880\\n/1124 1124\\n/5243867 5243867\\n', 'cache': ['./bvtcached', '-c', 'workload-mixed.txt', '-t', '8'], 'proxy': ['./webproxy', '-s', 'localhost:8000', '-t', '8', '-z', '4096', '-n', '8', '-p', '8500'], 'cache workload file': '/412 412\\n/1047589 1047589\\n/512 512\\n/1048576 1048576\\n/612 612\\n/1049563 1049563\\n/924 924\\n/5241893 5241893\\n/1024 1024\\n/5242880 5242880\\n/1124 1124\\n/5243867 5243867\\n', 'client': ['./bvtclient', '-w', 'workload-mixed.txt', '-t', '8', '-r', '16', '-p', '8500']}\n\nException: The cache terminated during testing {'client workload file': '/412 412\\n/1047589 1047589\\n/512 512\\n/1048576 1048576\\n/612 612\\n/1049563 1049563\\n/924 924\\n/5241893 5241893\\n/1024 1024\\n/5242880 5242880\\n/1124 1124\\n/5243867 5243867\\n', 'cache': ['./bvtcached', '-c', 'workload-mixed.txt', '-t', '8'], 'proxy': ['./webproxy', '-s', 'localhost:8000', '-t', '8', '-z', '4096', '-n', '8', '-p', '8500'], 'cache workload file': '/412 412\\n/1047589 1047589\\n/512 512\\n/1048576 1048576\\n/612 612\\n/1049563 1049563\\n/924 924\\n/5241893 5241893\\n/1024 1024\\n/5242880 5242880\\n/1124 1124\\n/5243867 5243867\\n', 'client': ['./bvtclient', '-w', 'workload-mixed.txt', '-t', '8', '-r', '16', '-p', '8500']}\n\nException: The cache terminated during testing {'client workload file': '/412 412\\n/1047589 1047589\\n/512 512\\n/1048576 1048576\\n/612 612\\n/1049563 1049563\\n/924 924\\n/5241893 5241893\\n/1024 1024\\n/5242880 5242880\\n/1124 1124\\n/5243867 5243867\\n', 'cache': ['./bvtcached', '-c', 'workload-mixed.txt', '-t', '8'], 'proxy': ['./webproxy', '-s', 'localhost:8000', '-t', '8', '-z', '4096', '-n', '8', '-p', '8500'], 'cache workload file': '/412 412\\n/1047589 1047589\\n/512 512\\n/1048576 1048576\\n/612 612\\n/1049563 1049563\\n/924 924\\n/5241893 5241893\\n/1024 1024\\n/5242880 5242880\\n/1124 1124\\n/5243867 5243867\\n', 'client': ['./bvtclient', '-w', 'workload-mixed.txt', '-t', '8', '-r', '16', '-p', '8500']}\n\nException: The cache terminated during testing {'client workload file': '/412 412\\n/1047589 1047589\\n/512 512\\n/1048576 1048576\\n/612 612\\n/1049563 1049563\\n/924 924\\n/5241893 5241893\\n/1024 1024\\n/5242880 5242880\\n/1124 1124\\n/5243867 5243867\\n', 'cache': ['./bvtcached', '-c', 'workload-mixed.txt', '-t', '8'], 'proxy': ['./webproxy', '-s', 'localhost:8000', '-t', '8', '-z', '4096', '-n', '8', '-p', '8500'], 'cache workload file': '/412 412\\n/1047589 1047589\\n/512 512\\n/1048576 1048576\\n/612 612\\n/1049563 1049563\\n/924 924\\n/5241893 5241893\\n/1024 1024\\n/5242880 5242880\\n/1124 1124\\n/5243867 5243867\\n', 'client': ['./bvtclient', '-w', 'workload-mixed.txt', '-t', '8', '-r', '16', '-p', '8500']}\n",
+                "cached_console": "ftok: cache to proxy: No such file or directory\nftok: cache to proxy: No such file or directory\nftok: cache to proxy: No such file or directory\nftok: cache to proxy: No such file or directory\nftok: cache to proxy: No such file or directory\n"
+            },
+            "traceback": "",
+            "description": "Multi-threaded Cache test with simultaneous multi-threaded downloads (mixed file sizes)"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Cache Test with single threaded downloads"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Cache Test with simultaneous multi-threaded downloads (mixed file sizes)"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Cache Test with simultaneous multi-threaded downloads (small file sizes)"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Concurrent Download of Same File Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Large File Transfer Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Test Cache for multi-threading efficacy (or is it faster with more threads?)"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Non-Existent File Transfer Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Small File Transfer Test."
+        }
+    ]
+}

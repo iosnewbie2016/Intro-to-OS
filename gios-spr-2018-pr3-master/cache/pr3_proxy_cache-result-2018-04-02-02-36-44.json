@@ -1,0 +1,152 @@
+{
+    "tests": [
+        {
+            "output": {
+                "cached_console": "",
+                "passfail": "passed",
+                "cached_returncode": 0
+            },
+            "traceback": "",
+            "description": "Cache Compilation Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": 0,
+                "proxy_console": "",
+                "passfail": "passed"
+            },
+            "traceback": "",
+            "description": "Proxy Compilation Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "./bvtclient -s localhost -p 8500 -t 2 -w workload-big.txt -r 16 -m udacious.log\n",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "Process ID: 105, Thread ID: 140723934455552\nProcess ID: 105, Thread ID: 140723942848256\n\nException: The cache terminated during testing {'client workload file': '/1047589 1047589\\n/1048576 1048576\\n/1049563 1049563\\n/5241893 5241893\\n/5242880 5242880\\n/5243867 5243867\\n', 'cache': ['./bvtcached', '-c', 'workload-big.txt', '-t', '2'], 'proxy': ['./webproxy', '-s', 'localhost:8000', '-t', '2', '-z', '65536', '-n', '2', '-p', '8500'], 'cache workload file': '/1047589 1047589\\n/1048576 1048576\\n/1049563 1049563\\n/5241893 5241893\\n/5242880 5242880\\n/5243867 5243867\\n', 'client': ['./bvtclient', '-w', 'workload-big.txt', '-t', '2', '-r', '16', '-p', '8500']}\n",
+                "cached_console": "ftok: cache to proxy: No such file or directory\n"
+            },
+            "traceback": "",
+            "description": "Test Cache supporting large segments"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "./bvtclient -s localhost -p 8500 -t 8 -w workload-mixed.txt -r 16 -m udacious.log\n./bvtclient -s localhost -p 8500 -t 8 -w workload-mixed.txt -r 16 -m udacious.log\n./bvtclient -s localhost -p 8500 -t 8 -w workload-mixed.txt -r 16 -m udacious.log\n./bvtclient -s localhost -p 8500 -t 8 -w workload-mixed.txt -r 16 -m udacious.log\n./bvtclient -s localhost -p 8500 -t 8 -w workload-mixed.txt -r 16 -m udacious.log\n",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "Process ID: 151, Thread ID: 140304238765824\nProcess ID: 151, Thread ID: 140304221980416\nProcess ID: 151, Thread ID: 140304188409600\nProcess ID: 151, Thread ID: 140304230373120\nProcess ID: 151, Thread ID: 140304247158528\nProcess ID: 151, Thread ID: 140304213587712\nProcess ID: 151, Thread ID: 140304196802304\nProcess ID: 151, Thread ID: 140304205195008\nProcess ID: 199, Thread ID: 140344911976192\nProcess ID: 199, Thread ID: 140344886798080\nProcess ID: 199, Thread ID: 140344903583488\nProcess ID: 199, Thread ID: 140344928761600\nProcess ID: 199, Thread ID: 140344870012672\nProcess ID: 199, Thread ID: 140344895190784\nProcess ID: 199, Thread ID: 140344878405376\nProcess ID: 199, Thread ID: 140344920368896\nProcess ID: 247, Thread ID: 140073346529024\nProcess ID: 247, Thread ID: 140073296172800\nProcess ID: 247, Thread ID: 140073321350912\nProcess ID: 247, Thread ID: 140073287780096\nProcess ID: 247, Thread ID: 140073329743616\nProcess ID: 247, Thread ID: 140073338136320\nProcess ID: 247, Thread ID: 140073304565504\nProcess ID: 247, Thread ID: 140073312958208\nProcess ID: 295, Thread ID: 140084039902976\nProcess ID: 295, Thread ID: 140084023117568\nProcess ID: 295, Thread ID: 140084014724864\nProcess ID: 295, Thread ID: 140084006332160\nProcess ID: 295, Thread ID: 140083997939456\nProcess ID: 295, Thread ID: 140084031510272\nProcess ID: 295, Thread ID: 140084048295680\nProcess ID: 295, Thread ID: 140083989546752\nProcess ID: 343, Thread ID: 139816742151936\nProcess ID: 343, Thread ID: 139816733759232\nProcess ID: 343, Thread ID: 139816750544640\nProcess ID: 343, Thread ID: 139816725366528\nProcess ID: 343, Thread ID: 139816691795712\nProcess ID: 343, Thread ID: 139816700188416\nProcess ID: 343, Thread ID: 139816708581120\nProcess ID: 343, Thread ID: 139816716973824\n\nException: The cache terminated during testing {'client workload file': '/412 412\\n/1047589 1047589\\n/512 512\\n/1048576 1048576\\n/612 612\\n/1049563 1049563\\n/924 924\\n/5241893 5241893\\n/1024 1024\\n/5242880 5242880\\n/1124 1124\\n/5243867 5243867\\n', 'cache': ['./bvtcached', '-c', 'workload-mixed.txt', '-t', '8'], 'proxy': ['./webproxy', '-s', 'localhost:8000', '-t', '8', '-z', '4096', '-n', '8', '-p', '8500'], 'cache workload file': '/412 412\\n/1047589 1047589\\n/512 512\\n/1048576 1048576\\n/612 612\\n/1049563 1049563\\n/924 924\\n/5241893 5241893\\n/1024 1024\\n/5242880 5242880\\n/1124 1124\\n/5243867 5243867\\n', 'client': ['./bvtclient', '-w', 'workload-mixed.txt', '-t', '8', '-r', '16', '-p', '8500']}\n\nException: The cache terminated during testing {'client workload file': '/412 412\\n/1047589 1047589\\n/512 512\\n/1048576 1048576\\n/612 612\\n/1049563 1049563\\n/924 924\\n/5241893 5241893\\n/1024 1024\\n/5242880 5242880\\n/1124 1124\\n/5243867 5243867\\n', 'cache': ['./bvtcached', '-c', 'workload-mixed.txt', '-t', '8'], 'proxy': ['./webproxy', '-s', 'localhost:8000', '-t', '8', '-z', '4096', '-n', '8', '-p', '8500'], 'cache workload file': '/412 412\\n/1047589 1047589\\n/512 512\\n/1048576 1048576\\n/612 612\\n/1049563 1049563\\n/924 924\\n/5241893 5241893\\n/1024 1024\\n/5242880 5242880\\n/1124 1124\\n/5243867 5243867\\n', 'client': ['./bvtclient', '-w', 'workload-mixed.txt', '-t', '8', '-r', '16', '-p', '8500']}\n\nException: The cache terminated during testing {'client workload file': '/412 412\\n/1047589 1047589\\n/512 512\\n/1048576 1048576\\n/612 612\\n/1049563 1049563\\n/924 924\\n/5241893 5241893\\n/1024 1024\\n/5242880 5242880\\n/1124 1124\\n/5243867 5243867\\n', 'cache': ['./bvtcached', '-c', 'workload-mixed.txt', '-t', '8'], 'proxy': ['./webproxy', '-s', 'localhost:8000', '-t', '8', '-z', '4096', '-n', '8', '-p', '8500'], 'cache workload file': '/412 412\\n/1047589 1047589\\n/512 512\\n/1048576 1048576\\n/612 612\\n/1049563 1049563\\n/924 924\\n/5241893 5241893\\n/1024 1024\\n/5242880 5242880\\n/1124 1124\\n/5243867 5243867\\n', 'client': ['./bvtclient', '-w', 'workload-mixed.txt', '-t', '8', '-r', '16', '-p', '8500']}\n\nException: The cache terminated during testing {'client workload file': '/412 412\\n/1047589 1047589\\n/512 512\\n/1048576 1048576\\n/612 612\\n/1049563 1049563\\n/924 924\\n/5241893 5241893\\n/1024 1024\\n/5242880 5242880\\n/1124 1124\\n/5243867 5243867\\n', 'cache': ['./bvtcached', '-c', 'workload-mixed.txt', '-t', '8'], 'proxy': ['./webproxy', '-s', 'localhost:8000', '-t', '8', '-z', '4096', '-n', '8', '-p', '8500'], 'cache workload file': '/412 412\\n/1047589 1047589\\n/512 512\\n/1048576 1048576\\n/612 612\\n/1049563 1049563\\n/924 924\\n/5241893 5241893\\n/1024 1024\\n/5242880 5242880\\n/1124 1124\\n/5243867 5243867\\n', 'client': ['./bvtclient', '-w', 'workload-mixed.txt', '-t', '8', '-r', '16', '-p', '8500']}\n\nException: The cache terminated during testing {'client workload file': '/412 412\\n/1047589 1047589\\n/512 512\\n/1048576 1048576\\n/612 612\\n/1049563 1049563\\n/924 924\\n/5241893 5241893\\n/1024 1024\\n/5242880 5242880\\n/1124 1124\\n/5243867 5243867\\n', 'cache': ['./bvtcached', '-c', 'workload-mixed.txt', '-t', '8'], 'proxy': ['./webproxy', '-s', 'localhost:8000', '-t', '8', '-z', '4096', '-n', '8', '-p', '8500'], 'cache workload file': '/412 412\\n/1047589 1047589\\n/512 512\\n/1048576 1048576\\n/612 612\\n/1049563 1049563\\n/924 924\\n/5241893 5241893\\n/1024 1024\\n/5242880 5242880\\n/1124 1124\\n/5243867 5243867\\n', 'client': ['./bvtclient', '-w', 'workload-mixed.txt', '-t', '8', '-r', '16', '-p', '8500']}\n",
+                "cached_console": "ftok: cache to proxy: No such file or directory\nftok: cache to proxy: No such file or directory\nftok: cache to proxy: No such file or directory\nftok: cache to proxy: No such file or directory\nftok: cache to proxy: No such file or directory\n"
+            },
+            "traceback": "",
+            "description": "Multi-threaded Cache test with simultaneous multi-threaded downloads (mixed file sizes)"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "./bvtclient -s localhost -p 8500 -t 1 -w workloadai.txt -r 10 -m udacious.log\n",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "Process ID: 409, Thread ID: 140065317582592\n\nException: The cache terminated during testing {'client workload file': '/1kb-sample-file-0.png 1270\\n/1kb-sample-file-1.html 1034\\n/1kb-sample-file-2.png 1073\\n/1kb-sample-file-3.jpg 1295\\n/1kb-sample-file-4.png 1273\\n/notthere.png 1024\\n/paraglider.jpg 233174\\n/road.jpg 138177\\n/yellowstone.jpg 104244\\n/moranabovejacksonlake.jpg 452231\\n', 'cache': ['./bvtcached', '-c', 'workloadai-cache.txt', '-t', '1'], 'proxy': ['./webproxy', '-s', 'localhost:8000', '-t', '1', '-z', '4096', '-n', '1', '-p', '8500'], 'cache workload file': '/1kb-sample-file-0.png 1270\\n/1kb-sample-file-1.html 1034\\n/1kb-sample-file-2.png 1073\\n/1kb-sample-file-3.jpg 1295\\n/1kb-sample-file-4.png 1273\\n/paraglider.jpg 233174\\n/road.jpg 138177\\n/yellowstone.jpg 104244\\n/moranabovejacksonlake.jpg 452231\\n', 'client': ['./bvtclient', '-w', 'workloadai.txt', '-t', '1', '-r', '10', '-p', '8500']}\n",
+                "cached_console": "ftok: cache to proxy: No such file or directory\n"
+            },
+            "traceback": "",
+            "description": "Cache Test with single threaded downloads"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "./bvtclient -s localhost -p 8500 -t 10 -w workloadai.txt -r 10 -m udacious.log\n./bvtclient -s localhost -p 8500 -t 10 -w workloadai.txt -r 10 -m udacious.log\n./bvtclient -s localhost -p 8500 -t 10 -w workloadai.txt -r 10 -m udacious.log\n./bvtclient -s localhost -p 8500 -t 10 -w workloadai.txt -r 10 -m udacious.log\n./bvtclient -s localhost -p 8500 -t 10 -w workloadai.txt -r 10 -m udacious.log\n",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "Log Tail:\ntcached', '-c', 'workloadai-cache.txt', '-t', '1'], 'proxy': ['./webproxy', '-s', 'localhost:8000', '-t', '10', '-z', '4096', '-n', '1', '-p', '8500'], 'cache workload file': '/1kb-sample-file-0.png 1270\\n/1kb-sample-file-1.html 1034\\n/1kb-sample-file-2.png 1073\\n/1kb-sample-file-3.jpg 1295\\n/1kb-sample-file-4.png 1273\\n/paraglider.jpg 233174\\n/road.jpg 138177\\n/yellowstone.jpg 104244\\n/moranabovejacksonlake.jpg 452231\\n', 'client': ['./bvtclient', '-w', 'workloadai.txt', '-t', '10', '-r', '10', '-p', '8500']}\n\nException: The cache terminated during testing {'client workload file': '/1kb-sample-file-0.png 1270\\n/1kb-sample-file-1.html 1034\\n/1kb-sample-file-2.png 1073\\n/1kb-sample-file-3.jpg 1295\\n/1kb-sample-file-4.png 1273\\n/notthere.png 1024\\n/paraglider.jpg 233174\\n/road.jpg 138177\\n/yellowstone.jpg 104244\\n/moranabovejacksonlake.jpg 452231\\n', 'cache': ['./bvtcached', '-c', 'workloadai-cache.txt', '-t', '1'], 'proxy': ['./webproxy', '-s', 'localhost:8000', '-t', '10', '-z', '4096', '-n', '1', '-p', '8500'], 'cache workload file': '/1kb-sample-file-0.png 1270\\n/1kb-sample-file-1.html 103Process ID: 647, Thread ID: 140011875833600\nProcess ID: 647, Thread ID: 140011859048192\nProcess ID: 647, Thread ID: 140011892619008\nProcess ID: 647, Thread ID: 140011884226304\nProcess ID: 647, Thread ID: 140011867440896\nProcess ID: 647, Thread ID: 140011901011712\nProcess ID: 647, Thread ID: 140011909404416\nProcess ID: 647, Thread ID: 140011917797120\nProcess ID: 647, Thread ID: 140011926189824\nProcess ID: 647, Thread ID: 140011850655488\n4\\n/1kb-sample-file-2.png 1073\\n/1kb-sample-file-3.jpg 1295\\n/1kb-sample-file-4.png 1273\\n/paraglider.jpg 233174\\n/road.jpg 138177\\n/yellowstone.jpg 104244\\n/moranabovejacksonlake.jpg 452231\\n', 'client': ['./bvtclient', '-w', 'workloadai.txt', '-t', '10', '-r', '10', '-p', '8500']}\n",
+                "cached_console": "ftok: cache to proxy: No such file or directory\nftok: cache to proxy: No such file or directory\nftok: cache to proxy: No such file or directory\nftok: cache to proxy: No such file or directory\nftok: cache to proxy: No such file or directory\n"
+            },
+            "traceback": "",
+            "description": "Cache Test with simultaneous multi-threaded downloads (mixed file sizes)"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Cache Test with simultaneous multi-threaded downloads (small file sizes)"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Concurrent Download of Same File Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Large File Transfer Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Test Cache for multi-threading efficacy (or is it faster with more threads?)"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Non-Existent File Transfer Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "cached_returncode": 255,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "",
+                "cached_console": ""
+            },
+            "traceback": "",
+            "description": "Small File Transfer Test."
+        }
+    ]
+}

@@ -1,0 +1,109 @@
+{
+    "tests": [
+        {
+            "output": {
+                "proxy_returncode": null,
+                "server_returncode": 0,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "Size: -1\n_close: seems that entire file was not sent.  Filling with zeros.\n"
+            },
+            "traceback": "Traceback (most recent call last):\n  File \"/home/vmuser_jmgukdhi/gios.py\", line 249, in func_wrapper\n    ans = func(self)\n  File \"run.py\", line 317, in test_nonexistent_files\n    self.go(num_client_threads, num_proxy_threads, delay, num_requests, workload_file, answer_log)\n  File \"run.py\", line 222, in go\n    self.assertIsNotNone(self.p_client.poll(), \"The client has not exited within the timeout ({} seconds) and is probably hung.\".format(self.client_timeout))\nAssertionError: The client has not exited within the timeout (20 seconds) and is probably hung.\n",
+            "description": "Tests that the server properly handles requests for non-existent files"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "server_returncode": 0,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "Size: 1073\n1073 bytes received\n1073 bytes sent\nSize: 1295\n1295 bytes received\n1295 bytes sent\nSize: 1273\n1273 bytes received\n1273 bytes sent\nSize: -1\n_close: seems that entire file was not sent.  Filling with zeros.\nSize: 1034\n1034 bytes received\n1034 bytes sent\nSize: 1270\n1270 bytes received\n1270 bytes sent\nSize: 1034\n1034 bytes received\n1034 bytes sent\nSize: 1073\n1073 bytes received\n1073 bytes sent\nSize: 1295\n1295 bytes received\n1295 bytes sent\nSize: 138177\n138177 bytes received\n138177 bytes sent\nSize: -1\n_close: seems that entire file was not sent.  Filling with zeros.\nSize: 104244\n104244 bytes received\n104244 bytes sent\nSize: 138177\n138177 bytes received\n138177 bytes sent\nSize: 104244\n104244 bytes received\n104244 bytes sent\nSize: 1273\n1273 bytes received\n1273 bytes sent\nSize: -1\n_close: seems that entire file was not sent.  Filling with zeros.\nSize: 233174\n233174 bytes received\n233174 bytes sent\nSize: 1270\n1270 bytes received\n1270 bytes sent\nSize: 1073\n1073 bytes received\n1073 bytes sent\nSize: 233174\n233174 bytes received\n233174 bytes sent\nSize: 1034\n1034 bytes received\n1034 bytes sent\nSize: 1295\n1295 bytes received\n1295 bytes sent\nSize: 1273\n1273 bytes received\n1273 bytes sent\nSize: 138177\n138177 bytes received\n138177 bytes sent\nSize: 452231\n452231 bytes received\n452231 bytes sent\nSize: 104244\n104244 bytes received\n104244 bytes sent\nSize: 1034\n1034 bytes received\n1034 bytes sent\nSize: 1270\n1270 bytes received\n1270 bytes sent\nSize: 1073\n1073 bytes received\n1073 bytes sent\nSize: 1295\n1295 bytes received\n1295 bytes sent\nSize: 1273\n1273 bytes received\n1273 bytes sent\nSize: 452231\n452231 bytes received\n452231 bytes sent\nSize: -1\n_close: seems that entire file was not sent.  Filling with zeros.\nSize: 233174\n233174 bytes received\n233174 bytes sent\nSize: 138177\n138177 bytes received\n138177 bytes sent\nSize: 104244\n104244 bytes received\n104244 bytes sent\nSize: 1270\n1270 bytes received\n1270 bytes sent\nSize: 1034\n1034 bytes received\n1034 bytes sent\nSize: 1073\n1073 bytes received\n1073 bytes sent\nSize: 233174\n233174 bytes received\n233174 bytes sent\nSize: 1295\n1295 bytes received\n1295 bytes sent\nSize: 1273\n1273 bytes received\n1273 bytes sent\nSize: -1\n_close: seems that entire file was not sent.  Filling with zeros.\nSize: 452231\n452231 bytes received\n452231 bytes sent\nSize: 138177\n138177 bytes received\n138177 bytes sent\nSize: 233174\n233174 bytes received\n233174 bytes sent\nSize: 452231\n452231 bytes received\n452231 bytes sent\nSize: 1270\n1270 bytes received\n1270 bytes sent\nSize: 1034\n1034 bytes received\n1034 bytes sent\nSize: 104244\n104244 bytes received\n104244 bytes sent\nSize: 1073\n1073 bytes received\n1073 bytes sent\nSize: 1295\n1295 bytes received\n1295 bytes sent\nSize: 1273\n1273 bytes received\n1273 bytes sent\nSize: -1\n_close: seems that entire file was not sent.  Filling with zeros.\nSize: 233174\n233174 bytes received\n233174 bytes sent\nSize: 452231\n452231 bytes received\n452231 bytes sent\nSize: 138177\n138177 bytes received\n138177 bytes sent\nSize: 104244\n104244 bytes received\n104244 bytes sent\nSize: 1270\n1270 bytes received\n1270 bytes sent\nSize: 1034\n1034 bytes received\n1034 bytes sent\nSize: 1073\n1073 bytes received\n1073 bytes sent\nSize: 1295\n1295 bytes received\n1295 bytes sent\nSize: 1273\n1273 bytes received\n1273 bytes sent\nSize: -1\n_close: seems that entire file was not sent.  Filling with zeros.\nSize: 452231\n452231 bytes received\n452231 bytes sent\nSize: 233174\n233174 bytes received\n233174 bytes sent\nSize: 138177\n138177 bytes received\n138177 bytes sent\nSize: 104244\n104244 bytes received\n104244 bytes sent\nSize: 452231\n452231 bytes received\n452231 bytes sent\nSize: 1270\n1270 bytes received\n1270 bytes sent\nSize: 1034\n1034 bytes received\n1034 bytes sent\nSize: 1073\n1073 bytes received\n1073 bytes sent\nSize: 1295\n1295 bytes received\n1295 bytes sent\nSize: 1273\n1273 bytes received\n1273 bytes sent\nSize: -1\n_close: seems that entire file was not sent.  Filling with zeros.\n"
+            },
+            "traceback": "Traceback (most recent call last):\n  File \"/home/vmuser_jmgukdhi/gios.py\", line 249, in func_wrapper\n    ans = func(self)\n  File \"run.py\", line 380, in test_proxy_high_stress\n    self.go(num_client_threads, num_proxy_threads, delay, num_requests, workload_file, answer_log)\n  File \"run.py\", line 222, in go\n    self.assertIsNotNone(self.p_client.poll(), \"The client has not exited within the timeout ({} seconds) and is probably hung.\".format(self.client_timeout))\nAssertionError: The client has not exited within the timeout (20 seconds) and is probably hung.\n",
+            "description": "Test with 3:1 ratio client threads to proxy threads"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "server_returncode": 0,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "Size: -1\n_close: seems that entire file was not sent.  Filling with zeros.\nSize: 1034\n1034 bytes received\n1034 bytes sent\nSize: 1073\n1073 bytes received\n1073 bytes sent\nSize: 1273\n1273 bytes received\n1273 bytes sent\nSize: 1295\n1295 bytes received\n1295 bytes sent\nSize: 138177\n138177 bytes received\n138177 bytes sent\nSize: 104244\n104244 bytes received\n104244 bytes sent\nSize: 233174\n233174 bytes received\n233174 bytes sent\nSize: 1270\n1270 bytes received\n1270 bytes sent\nSize: 452231\n452231 bytes received\n452231 bytes sent\n"
+            },
+            "traceback": "Traceback (most recent call last):\n  File \"/home/vmuser_jmgukdhi/gios.py\", line 249, in func_wrapper\n    ans = func(self)\n  File \"run.py\", line 354, in test_proxy_multithreaded\n    self.go(num_client_threads, num_proxy_threads, delay, num_requests, workload_file, answer_log)\n  File \"run.py\", line 222, in go\n    self.assertIsNotNone(self.p_client.poll(), \"The client has not exited within the timeout ({} seconds) and is probably hung.\".format(self.client_timeout))\nAssertionError: The client has not exited within the timeout (20 seconds) and is probably hung.\n",
+            "description": "Test with equal number of client and proxy threads"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "server_returncode": 0,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "Size: 1034\n1034 bytes received\n1034 bytes sent\nSize: 1073\n1073 bytes received\n1073 bytes sent\nSize: 1295\n1295 bytes received\n1295 bytes sent\nSize: 1273\n1273 bytes received\n1273 bytes sent\nSize: -1\n_close: seems that entire file was not sent.  Filling with zeros.\n"
+            },
+            "traceback": "Traceback (most recent call last):\n  File \"/home/vmuser_jmgukdhi/gios.py\", line 249, in func_wrapper\n    ans = func(self)\n  File \"run.py\", line 279, in test_proxy_one_at_a_time\n    self.go(num_client_threads, num_proxy_threads, delay, num_requests, workload_file, answer_log)\n  File \"run.py\", line 222, in go\n    self.assertIsNotNone(self.p_client.poll(), \"The client has not exited within the timeout ({} seconds) and is probably hung.\".format(self.client_timeout))\nAssertionError: The client has not exited within the timeout (20 seconds) and is probably hung.\n",
+            "description": "Tests the proxy behaves as expected when one request is made at a time."
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "server_returncode": 0,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "Size: 1034\n1034 bytes received\n1034 bytes sent\nSize: 1073\n1073 bytes received\n1073 bytes sent\nSize: 1295\n1295 bytes received\n1295 bytes sent\nSize: 1273\n1273 bytes received\n1273 bytes sent\nSize: -1\n_close: seems that entire file was not sent.  Filling with zeros.\n=================================================================\n==439==ERROR: AddressSanitizer: heap-use-after-free on address 0x611000009de8 at pc 0x0000004039a3 bp 0x7f4581ffed20 sp 0x7f4581ffed10\nREAD of size 8 at 0x611000009de8 thread T1\n"
+            },
+            "traceback": "Traceback (most recent call last):\n  File \"/home/vmuser_jmgukdhi/gios.py\", line 249, in func_wrapper\n    ans = func(self)\n  File \"run.py\", line 342, in test_proxy_simul_clients\n    self.go(num_client_threads, num_proxy_threads, delay, num_requests, workload_file, answer_log)\n  File \"run.py\", line 222, in go\n    self.assertIsNotNone(self.p_client.poll(), \"The client has not exited within the timeout ({} seconds) and is probably hung.\".format(self.client_timeout))\nAssertionError: The client has not exited within the timeout (20 seconds) and is probably hung.\n",
+            "description": "Tests the proxy behaves as expected when multiple requests are made simultaneously."
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "server_returncode": 0,
+                "client_console": "",
+                "passfail": "failed",
+                "client_returncode": null,
+                "proxy_console": "Log Tail:\nle was not sent.  Filling with zeros.\nSize: 233174\n233174 bytes received\n233174 bytes sent\nSize: 138177\n138177 bytes received\n138177 bytes sent\nSize: 233174\n233174 bytes received\n233174 bytes sent\nSize: 452231\n452231 bytes received\n452231 bytes sent\nSize: 1270\n1270 bytes received\n1270 bytes sent\nSize: 1034\n1034 bytes received\n1034 bytes sent\nSize: 104244\n104244 bytes received\n104244 bytes sent\nSize: 1073\n1073 bytes received\n1073 bytes sent\nSize: 1295\n1295 bytes received\n1295 bytes sent\nSize: 1273\n1273 bytes received\n1273 bytes sent\nSize: -1\n_close: seems that entire file was not sent.  Filling with zeros.\nSize: 233174\n233174 bytes received\n233174 bytes sent\nSize: 452231\n452231 bytes received\n452231 bytes sent\nSize: 138177\n138177 bytes received\n138177 bytes sent\nSize: 104244\n104244 bytes received\n104244 bytes sent\nSize: 1270\n1270 bytes received\n1270 bytes sent\nSize: 1034\n1034 bytes received\n1034 bytes sent\nSize: 1073\n1073 bytes received\n1073 bytes sent\nSize: 1295\n1295 bytes received\n1295 bytes sent\nSize: 1273\n1273 bytes received\n1273 bytes sent\nSize: -1\n_close: seems that entire file was not sent.  Filling with zeros.\nSize: 452231\n452231 bytes received\n452231 bytes sent\nSize: 233174\n233174 bytes received\n233174 bytes sent\nSize: 138177\n138177 bytes received\n138177 bytes sent\nSize: 104244\n104244 bytes received\n104244 bytes sent\nSize: 452231\n452231 bytes received\n452231 bytes sent\nSize: 1270\n1270 bytes received\n1270 bytes sent\nSize: 1034\n1034 bytes received\n1034 bytes sent\nSize: 1073\n1073 bytes received\n1073 bytes sent\nSize: 1295\n1295 bytes received\n1295 bytes sent\nSize: 1273\n1273 bytes received\n1273 bytes sent\nSize: -1\n_close: seems that entire file was not sent.  Filling with zeros.\n"
+            },
+            "traceback": "Traceback (most recent call last):\n  File \"/home/vmuser_jmgukdhi/gios.py\", line 249, in func_wrapper\n    ans = func(self)\n  File \"run.py\", line 368, in test_proxy_stress\n    self.go(num_client_threads, num_proxy_threads, delay, num_requests, workload_file, answer_log)\n  File \"run.py\", line 222, in go\n    self.assertIsNotNone(self.p_client.poll(), \"The client has not exited within the timeout ({} seconds) and is probably hung.\".format(self.client_timeout))\nAssertionError: The client has not exited within the timeout (20 seconds) and is probably hung.\n",
+            "description": "Test with 2:1 ratio client threads to proxy threads"
+        },
+        {
+            "output": {
+                "proxy_returncode": 0,
+                "proxy_console": "cc -Wall --std=gnu99 -g3 -Wno-format-security -Werror -fsanitize=address -fno-omit-frame-pointer   -c -o webproxy.o webproxy.c\ncc -Wall --std=gnu99 -g3 -Wno-format-security -Werror -fsanitize=address -fno-omit-frame-pointer   -c -o steque.o steque.c\ncc -Wall --std=gnu99 -g3 -Wno-format-security -Werror -fsanitize=address -fno-omit-frame-pointer   -c -o gfserver.o gfserver.c\ncc -Wall --std=gnu99 -g3 -Wno-format-security -Werror -fsanitize=address -fno-omit-frame-pointer   -c -o handle_with_curl.o handle_with_curl.c\ncc -o webproxy -Wall --std=gnu99 -g3 -Wno-format-security -Werror -fsanitize=address -fno-omit-frame-pointer  webproxy.o steque.o gfserver.o handle_with_curl.o -lpthread -L/usr/lib/x86_64-linux-gnu -lcurl\n",
+                "passfail": "passed"
+            },
+            "traceback": "",
+            "description": "Proxy Compilation Test"
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "server_returncode": 0,
+                "client_console": "",
+                "passfail": "passed",
+                "client_returncode": 0,
+                "proxy_console": ""
+            },
+            "traceback": "",
+            "description": "Tests that the server properly sends an OK response and a long message."
+        },
+        {
+            "output": {
+                "proxy_returncode": null,
+                "server_returncode": 0,
+                "client_console": "",
+                "passfail": "passed",
+                "client_returncode": 0,
+                "proxy_console": ""
+            },
+            "traceback": "",
+            "description": "Tests that the server properly sends an OK response and a short message."
+        }
+    ]
+}
