@@ -1,0 +1,24 @@
+Notes:
+
+MT Part 2 of RPC:
+1. In server svc main() we create a thread pool
+2. in minify_prog_1 which is the boss thread we will put an object in queue after svc_arg which as to be picked up by worker.
+3. The worker should have the code for invoking the minify actual method, sending the response and doing clean up.
+4. Boss will put the object in queue and return, so it will not wait for the worker to complete the minify process
+
+Just call the actual minify function that is declared in minifyjpeg.h directly. The generated code assums it may dispatch many different functions, but in reality we only have 1. Therefore, worker thread can just call the minify method created. 
+
+Might need to move the magic init and cleanup functions depending on where I put them in part 1. 
+
+1) Modify it to take in a parameter for your number of threads. 
+2) Create a threadpool containing the number of threads
+3) Break up the function that calls svc_getargs between the boss and the worker function.
+4) Make sure your cleanup makes sense for a multi threaded server.
+5) Have fun coding!
+
+OK. I have svc_getargs outside of my worker threads in now inside my registered method. I am using boss-worker thread pattern so my registered method calls svc_getargs then queues a request and signals a thread. But I get Magick error -zero-length blob not permitted - so I assume am not setting the input argument properly.
+
+From the main thread, i register request_handler method using RPC register. When the request arrives, i call svc_getargs get the data, transp pointer (these values are wrapped inside request structure). This request object get queued for worker threads for processing. worker thread is able to call the stored procedure. However svc_sendreply raising seg fault. It looks like SVXPRT (transport pointer) pointer contains xp_ops stucture which has function pointers, which is not getting copied with memcpy call causing the problem. However I think you don't have to copy the structures, just send a reference of them in your wrapped request struct to the worker queues. You will have to malloc the request struct itself and free after you used it in your thread.
+
+Testing the program locally:
+ start the minifyjpeg_svc and then run the minifyjpeg_main program to connect the svc via rpc as a client. 

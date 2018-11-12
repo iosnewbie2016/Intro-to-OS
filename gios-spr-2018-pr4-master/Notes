@@ -1,0 +1,16 @@
+Notes
+minify_via_rpc.c
+
+- allocate memory for your structs you defined in .x file;
+
+- make sure to initialize the struct contents;
+
+- after returning from call to rpc make sure to assign dst_len and dst_val appropriately;
+
+- also do NOT free too soon or else you will see 0 bytes written to small file output;
+
+ 
+
+minifyjpeg.c
+
+- simplify simplify simplify and let magickminify() do the work (hint hint hint) 

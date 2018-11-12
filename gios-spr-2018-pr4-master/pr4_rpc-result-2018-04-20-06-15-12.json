@@ -1,0 +1,66 @@
+{
+    "tests": [
+        {
+            "output": {
+                "client_returncode": 2,
+                "passfail": "failed",
+                "client_console": "gcc -Wall -g3 -I/usr/include/ImageMagick-6 -I/usr/include/x86_64-linux-gnu/ImageMagick-6 -Wno-unused-variable   -c -o bvt_main.o bvt_main.c\ngcc -Wall -g3 -I/usr/include/ImageMagick-6 -I/usr/include/x86_64-linux-gnu/ImageMagick-6 -Wno-unused-variable   -c -o minify_via_rpc.o minify_via_rpc.c\nIn file included from /usr/include/rpc/rpc.h:48:0,\n                 from minifyjpeg.h:9,\n                 from minifyjpeg_clnt.c:7,\n                 from minify_via_rpc.c:1:\nminify_via_rpc.c: In function 'get_minify_client':\nminify_via_rpc.c:23:37: warning: passing argument 3 of 'cl->cl_ops->cl_control' from incompatible pointer type [-Wincompatible-pointer-types]\n     clnt_control(cl, CLSET_TIMEOUT, &tv);\r\n                                     ^\nminify_via_rpc.c:23:37: note: expected 'char *' but argument is of type 'struct timeval *'\nminify_via_rpc.c: In function 'minify_via_rpc':\nminify_via_rpc.c:48:57: error: invalid operands to binary * (have 'void *' and 'long unsigned int')\n     image_output->dst.dst_val = (char *) malloc(src_val * sizeof(char));\r\n                                                         ^\n<builtin>: recipe for target 'minify_via_rpc.o' failed\nmake: *** [minify_via_rpc.o] Error 1\n"
+            },
+            "traceback": "Traceback (most recent call last):\n  File \"/home/vmuser_ptkwavnj/gios.py\", line 249, in func_wrapper\n    ans = func(self)\n  File \"run.py\", line 32, in test_main_compiles\n    self.assertEqual(p.returncode, 0, \"Your client code did not compile cleanly.\")\nAssertionError: Your client code did not compile cleanly.\n",
+            "description": "Tests that the client compiles"
+        },
+        {
+            "output": {
+                "client_returncode": -1,
+                "server_console": "",
+                "passfail": "failed",
+                "server_returncode": null,
+                "client_console": ""
+            },
+            "traceback": "Traceback (most recent call last):\n  File \"/home/vmuser_ptkwavnj/gios.py\", line 249, in func_wrapper\n    ans = func(self)\n  File \"run.py\", line 211, in test_large_file_transfer\n    self.go(num_client_threads, num_server_threads, delay, workload)\n  File \"run.py\", line 179, in go\n    self.converse(server_args, client_args)\n  File \"run.py\", line 125, in converse\n    self.p_client = self.runSubTask(\"client\", client_args, self.client_log, self.client_log)\n  File \"run.py\", line 115, in runSubTask\n    self.assertTrue(False, \"Test Program {} Execution Failed\".format(name))\nAssertionError: Test Program client Execution Failed\n",
+            "description": "Tests that a large file transfer works."
+        },
+        {
+            "output": {
+                "client_returncode": -1,
+                "server_console": "",
+                "passfail": "failed",
+                "server_returncode": null,
+                "client_console": ""
+            },
+            "traceback": "Traceback (most recent call last):\n  File \"/home/vmuser_ptkwavnj/gios.py\", line 249, in func_wrapper\n    ans = func(self)\n  File \"run.py\", line 232, in test_multiple_transfers\n    self.go(num_client_threads, num_server_threads, delay, workload)\n  File \"run.py\", line 179, in go\n    self.converse(server_args, client_args)\n  File \"run.py\", line 125, in converse\n    self.p_client = self.runSubTask(\"client\", client_args, self.client_log, self.client_log)\n  File \"run.py\", line 115, in runSubTask\n    self.assertTrue(False, \"Test Program {} Execution Failed\".format(name))\nAssertionError: Test Program client Execution Failed\n",
+            "description": "Tests that multiple transfers work."
+        },
+        {
+            "output": {
+                "client_returncode": -1,
+                "server_console": "",
+                "passfail": "failed",
+                "server_returncode": null,
+                "client_console": ""
+            },
+            "traceback": "Traceback (most recent call last):\n  File \"/home/vmuser_ptkwavnj/gios.py\", line 249, in func_wrapper\n    ans = func(self)\n  File \"run.py\", line 191, in test_single_transfer\n    self.go(num_client_threads, num_server_threads, delay, workload)\n  File \"run.py\", line 179, in go\n    self.converse(server_args, client_args)\n  File \"run.py\", line 125, in converse\n    self.p_client = self.runSubTask(\"client\", client_args, self.client_log, self.client_log)\n  File \"run.py\", line 115, in runSubTask\n    self.assertTrue(False, \"Test Program {} Execution Failed\".format(name))\nAssertionError: Test Program client Execution Failed\n",
+            "description": "Tests that a single transfer works."
+        },
+        {
+            "output": {
+                "client_returncode": -1,
+                "server_console": "",
+                "passfail": "failed",
+                "server_returncode": null,
+                "client_console": ""
+            },
+            "traceback": "Traceback (most recent call last):\n  File \"/home/vmuser_ptkwavnj/gios.py\", line 249, in func_wrapper\n    ans = func(self)\n  File \"run.py\", line 201, in test_timeout\n    self.go(num_client_threads, num_server_threads, delay, workload)\n  File \"run.py\", line 179, in go\n    self.converse(server_args, client_args)\n  File \"run.py\", line 125, in converse\n    self.p_client = self.runSubTask(\"client\", client_args, self.client_log, self.client_log)\n  File \"run.py\", line 115, in runSubTask\n    self.assertTrue(False, \"Test Program {} Execution Failed\".format(name))\nAssertionError: Test Program client Execution Failed\n",
+            "description": "Tests that the client handles a timeout situation correctly."
+        },
+        {
+            "output": {
+                "server_console": "gcc -o bvtminifymt.o -c -DBVT_DELAY=1 bvtminify.c `pkg-config --cflags MagickCore` -g3\ngcc -o bvtmt_svc -Wall -g3 -I/usr/include/ImageMagick-6 -I/usr/include/x86_64-linux-gnu/ImageMagick-6 -Wno-unused-variable -DBVT_DELAY=0 `pkg-config --cflags MagickCore` -g3 -DRPC_SVC_FG minifyjpeg_svc.o minifyjpeg_xdr.o bvtminifymt.o minifyjpeg.o steque.o  -lpthread  `pkg-config --libs MagickCore`\n",
+                "passfail": "passed",
+                "server_returncode": 0
+            },
+            "traceback": "",
+            "description": "Tests that the server compiles"
+        }
+    ]
+}
